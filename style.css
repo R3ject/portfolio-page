@@ -1,0 +1,148 @@
+/* Reset some default styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #222;
+    color: #fff;
+  }
+  
+  .content-wrapper {
+    position: relative;
+    z-index: 1000;
+  }
+  
+  /* Projects Gallery */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    position: relative;
+    z-index: 1010;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+  }
+  
+  .project-card {
+    text-align: center;
+    position: relative;
+    z-index: 1020;
+    margin-bottom: 1rem;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .project-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .project-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 10000 !important;
+  }
+  
+  .modal-content {
+    background: #fff;
+    margin: auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    z-index: 10100 !important;
+  }
+  
+  .modal-tabs {
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .tab-button {
+    background: #eee;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .tab-button.active,
+  .tab-button:hover {
+    background: #ddd;
+  }
+  
+  .modal-tab-content {
+    margin: 1rem 0;
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  #tsparticles > canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100 !important;
+    pointer-events: none;
+  }
+  
