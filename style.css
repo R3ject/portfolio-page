@@ -1,21 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+.hero {
+  position: relative;
+  display: flex;
+  background: none;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.hero-text .name {
+  font-family: 'Montserrat', sans-serif;
+  color: #ff6600;
+  display: inline-block;
+  transform-origin: center center; /* ensures scaling occurs from its center */
+}
+
+.hero-text .role {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh;
+  }
+}
+
+/* Projects Header */
+.projects-header {
+  text-align: center;
+  margin: 2rem 0 1rem;  /* Extra space above projects */
+}
+
+.projects-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.projects-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
 /* Reset some default styling */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  /* Hero Section */
-  .hero {
-    text-align: center;
-    padding: 4rem 1rem;
-    background: #222;
-    color: #fff;
-  }
-  
-  .content-wrapper {
-    position: relative;
-    z-index: 1000;
   }
   
   /* Projects Gallery */
@@ -144,5 +202,126 @@
     height: 100%;
     z-index: -100 !important;
     pointer-events: none;
+  }
+  
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.3rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Optional subtle pulse animation */
+    animation: pulse 3s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+  }
+  
+  .badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .badge-react {
+    background: linear-gradient(135deg, #61dafb, #21a1f1);
+    color: #fff;
+  }
+  
+  .badge-firebase {
+    background: linear-gradient(125deg, #ff5c5c, #e53e3e);
+    color: #fff;
+  }
+
+  .badge-mui {
+    background: linear-gradient(135deg, #66bb6a, #43a047);
+    color: #fff;
+  }
+
+  .badge-qr {
+    background: linear-gradient(135deg, #b75bae, #9843a0);
+    color: #fff;
+  }
+
+  .badge-qrgen {
+    background: linear-gradient(135deg, #5bb7a3, #43a089);
+    color: #fff;
+  }
+
+  .badge-geo {
+    background: linear-gradient(135deg, #b7b25b, #97a043);
+    color: #fff;
+  }
+  /* add more as needed */
+
+  .badge-node {
+    background: linear-gradient(135deg, #68a063, #3c873a);
+    color: #fff;
+  }
+  
+  .badge-angular {
+    background: linear-gradient(135deg, #dd0031, #c3002f);
+    color: #fff;
+  }
+
+  .how-to-section {
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .how-to-btn {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .how-to-btn:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+  }
+  
+  /* How To Modal styling (if not already defined) */
+  #howToModal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 11000; /* Make sure it's above the project modal */
+  }
+  
+  #howToModal .modal-content {
+    background: #fff;
+    margin: auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+  }
+  
+  .how-to-img {
+    max-width: 90%;
+    height: auto;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
   }
   
