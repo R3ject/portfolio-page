@@ -1,4 +1,4 @@
-// Sample data for project details (expand as needed)
+
 const projectDetails = {
     project1: {
       title: "Digital Punch Card",
@@ -68,6 +68,41 @@ const projectDetails = {
       image: "public/etx-bingo.png",
       link: "https://www.vividwebdevelopment.com/etx-bingo/"
     },
+    project3: {
+      title: "TableTracker",
+      description: `
+        <h3>Overview:</h3>
+        <p>
+          Developed a real-time, role-based table management application for a brewpub. TableTracker allows staff and customers to interact with table status using geolocation verification, predictive wait times, and an intuitive reservation queue. The system also includes features like table history logging, multi-location support, and dynamic analytics export.
+        </p>
+        <h3>Tech Stack:</h3>
+        <ul>
+          <li><strong>Frontend:</strong> React, Material UI, React Router, React Toastify, Chart.js</li>
+          <li><strong>Backend & Data:</strong> Firebase Cloud Firestore, Firebase Authentication, Firebase Storage (for assets)</li>
+          <li><strong>Other Tools:</strong> Geolocation API for on-site verification, localStorage for state persistence</li>
+        </ul>
+        <h3>Challenges:</h3>
+        <ul>
+          <li><strong>Geolocation Accuracy:</strong> Implemented robust on-site verification to ensure table status changes occur only when users are physically present, including support for demo mode and multi-location geofencing.</li>
+          <li><strong>Real-Time Data Updates:</strong> Leveraged Firestore's real-time capabilities to instantly reflect table status changes and reservation queue updates in the user interface.</li>
+          <li><strong>UI/UX Design:</strong> Created a clean, interactive interface with features like table history, dynamic analytics export, and sound notifications for staff alerts.</li>
+          <li><strong>Rate Limiting:</strong> Integrated a rate limiting mechanism to prevent abuse by tracking claim attempts and displaying remaining claims to the user.</li>
+        </ul>
+        <h3>Accomplishments:</h3>
+        <ul>
+          <li><strong>Comprehensive Table Management:</strong> Built an application that handles real-time table updates, predictive wait times, and reservation queuing with an intuitive UI.</li>
+          <li><strong>Demo & Multi-Location Modes:</strong> Implemented demo mode with a UI toggle and a brewpub selector to support multiple locations, enhancing the app's flexibility and portfolio appeal.</li>
+          <li><strong>Enhanced Accessibility & Presentation:</strong> Added ARIA labels and screenshot mode for improved accessibility and portfolio-ready presentations.</li>
+          <li><strong>Sound & Visual Feedback:</strong> Integrated sound alerts for staff notifications and dynamic toast messages to enhance user experience and operational responsiveness.</li>
+        </ul>
+        <p>
+          This project demonstrates a full-stack approach to building a scalable, real-time management system with a focus on robust geolocation, intuitive design, and interactive user feedback.
+        </p>
+      `,
+      image: "public/tabletracker.png",
+      link: "https://table-tracker-3ace2.web.app"
+    }
+    
     // Add more projects here
   };
   
