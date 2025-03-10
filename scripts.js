@@ -1,3 +1,24 @@
+window.addEventListener('load', () => {
+  const githubLink = document.querySelector('.github-link');
+  if (githubLink) {
+    // Initial pop-in animation on page load
+    gsap.fromTo(githubLink, 
+      { scale: 0.8, opacity: 0 }, 
+      { scale: 1, opacity: 1, duration: 1, ease: "back.out(1.7)" }
+    );
+
+    // Add GSAP hover animations (optional, as CSS hover already applies a scale)
+    githubLink.addEventListener('mouseenter', () => {
+      gsap.to(githubLink, { scale: 1.1, duration: 0.3, ease: "power1.out" });
+    });
+    
+    githubLink.addEventListener('mouseleave', () => {
+      gsap.to(githubLink, { scale: 1, duration: 0.3, ease: "power1.out" });
+    });
+  }
+});
+
+
 // ------------------------------
 // Project Details
 // ------------------------------
