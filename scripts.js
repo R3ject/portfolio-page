@@ -34,8 +34,8 @@ const projectDetails = {
       </ul>
       <h3>Challenges:</h3>
       <ul>
-        <li><strong>Geolocation Accuracy:</strong> Ensuring that punches are only added when a user is within the venue's geolocation parameters.</li>
-        <li><strong>UI Consistency:</strong> Avoiding duplicate or overlapping components via conditional rendering and proper state management.</li>
+        <li><strong>Geolocation Accuracy:</strong> Ensuring that punches are only added when within the venue's geolocation.</li>
+        <li><strong>UI Consistency:</strong> Avoiding duplicate or overlapping components via proper conditional rendering.</li>
         <li><strong>User Experience:</strong> Preventing manual manipulation of punch counts by disabling unintended interactions.</li>
         <li><strong>Real-Time Updates:</strong> Integrating real-time data updates using Firestore.</li>
       </ul>
@@ -44,11 +44,9 @@ const projectDetails = {
         <li><strong>Robust Loyalty Tracking:</strong> Successfully implemented QR code scanning integrated with geolocation.</li>
         <li><strong>Enhanced Onboarding:</strong> Developed an interactive onboarding tour for new users.</li>
         <li><strong>Error Handling & Feedback:</strong> Utilized dynamic toast notifications for real-time feedback.</li>
-        <li><strong>Scalability & Maintainability:</strong> Built the app with a modular React architecture and leveraged Firebase for scalability.</li>
+        <li><strong>Scalability & Maintainability:</strong> Built the app with a modular React architecture leveraging Firebase.</li>
       </ul>
-      <p>
-        This project demonstrates a full-stack approach to developing an engaging, real-time loyalty application.
-      </p>
+      <p>This project demonstrates a full-stack approach to developing an engaging, real-time loyalty application.</p>
     `,
     image: "public/digital-punch.jpeg",
     link: "https://digitalpunchcard-4f53d.web.app/",
@@ -57,13 +55,13 @@ const projectDetails = {
       <ol>
         <li>Create a new login.</li>
         <li>
-          When you are ready to scan the QR code provided below, click on the "Enable Demo Mode" button in the bottom left corner of the Punch Card page to bypass geolocation verification.
+          When you are ready to scan the QR code provided below, click on the "Enable Demo Mode" button in the bottom left corner to bypass geolocation verification.
           <br>
           <img src="public/demo-button.png" alt="Demo button location" class="how-to-img">
           <br>
           <img src="public/punch-card-qr.jpg" alt="Demo QR Code" class="how-to-img">
         </li>
-        <li>Next, click the "Scan QR Code" button in the top right of the page.</li>
+        <li>Next, click the "Scan QR Code" button in the top right.</li>
         <li>Scan the QR code and watch as your card is punched!</li>
       </ol>
     `
@@ -73,7 +71,7 @@ const projectDetails = {
     description: `
       <h3>Overview:</h3>
       <p>
-        Developed an interactive digital Bingo game application for a brewery’s loyalty program. Customers engage with the app by completing various tasks, earning rewards once they complete a row or column.
+        Developed an interactive digital Bingo game application for a brewery’s loyalty program. Customers complete tasks to earn rewards and mark progress by scanning QR codes.
       </p>
       <h3>Tech Stack:</h3>
       <ul>
@@ -85,7 +83,7 @@ const projectDetails = {
       <ul>
         <li><strong>Dynamic Task Updates:</strong> Ensuring tasks change every month and are randomly assigned.</li>
         <li><strong>Task Completion Tracking:</strong> Implementing QR code scanning to mark tasks as complete.</li>
-        <li><strong>User Authentication:</strong> Ensuring smooth user sign-up and sign-in.</li>
+        <li><strong>User Authentication:</strong> Ensuring smooth sign-up and sign-in.</li>
         <li><strong>Mobile Optimization:</strong> Creating a responsive interface.</li>
       </ul>
       <h3>Accomplishments:</h3>
@@ -95,9 +93,7 @@ const projectDetails = {
         <li><strong>User Experience:</strong> Streamlined authentication and user flow.</li>
         <li><strong>Scalability:</strong> Built with modular components for easy updates.</li>
       </ul>
-      <p>
-        This project demonstrates a full-stack approach to building an interactive, real-time loyalty application.
-      </p>
+      <p>This project demonstrates a full-stack approach to building an interactive, real-time loyalty application.</p>
     `,
     image: "public/etx-bingo.png",
     link: "https://www.vividwebdevelopment.com/etx-bingo/",
@@ -106,11 +102,11 @@ const projectDetails = {
       <ol>
         <li>Create a new login.</li>
         <li>
-          Click on the "How to Play" button towards the top of your randomly generated card.
+          Click on the "How to Play" button on your randomly generated card.
           <br>
-          <img src="public/bingo-how.png" alt="Bingo how to play button" class="how-to-img">
+          <img src="public/bingo-how.png" alt="Bingo how-to play button" class="how-to-img">
         </li>
-        <li>Download the <a href="public/Archive.zip" download>QR Codes</a> and start scanning to see the BINGO card react.</li>
+        <li>Download the <a href="public/Archive.zip" download>QR Codes</a> and start scanning.</li>
         <li>Go for BINGO!</li>
       </ol>
     `
@@ -130,21 +126,19 @@ const projectDetails = {
       </ul>
       <h3>Challenges:</h3>
       <ul>
-        <li><strong>Geolocation Accuracy:</strong> Ensuring table status updates only occur with proper on-site verification.</li>
+        <li><strong>Geolocation Accuracy:</strong> Ensuring table status updates occur only with proper on-site verification.</li>
         <li><strong>Real-Time Updates:</strong> Leveraging Firestore for instant updates.</li>
         <li><strong>UI/UX Design:</strong> Creating a clean, interactive interface.</li>
         <li><strong>Rate Limiting:</strong> Preventing abuse by tracking claim attempts.</li>
       </ul>
       <h3>Accomplishments:</h3>
       <ul>
-        <li><strong>Comprehensive Management:</strong> Built a system handling real-time updates and reservations.</li>
+        <li><strong>Comprehensive Management:</strong> Built a system for real-time updates and reservations.</li>
         <li><strong>Multi-Location Support:</strong> Implemented demo mode with multi-location support.</li>
         <li><strong>Accessibility:</strong> Enhanced with ARIA labels and screenshot mode.</li>
         <li><strong>Interactive Feedback:</strong> Integrated sound alerts and dynamic notifications.</li>
       </ul>
-      <p>
-        This project demonstrates a full-stack approach to building a scalable, real-time management system.
-      </p>
+      <p>This project demonstrates a full-stack approach to building a scalable, real-time management system.</p>
     `,
     image: "public/tabletracker.png",
     link: "https://table-tracker-3ace2.web.app",
@@ -183,9 +177,7 @@ const projectDetails = {
       <ul>
         <li>Prototype developed—work in progress.</li>
       </ul>
-      <p>
-        This project is in progress and demonstrates my hustle and experimentation.
-      </p>
+      <p>This project is in progress and demonstrates my hustle and experimentation.</p>
     `,
     image: "public/kegstack.png",
     link: "COMING SOON",
@@ -322,79 +314,21 @@ window.addEventListener('load', () => {
 // tsParticles initialization
 tsParticles.load("tsparticles", {
   background: {
-    color: {
-      value: "#1a1a1a"
-    }
+    color: { value: "#1a1a1a" }
   },
   fpsLimit: 60,
   particles: {
-    number: {
-      value: 40,
-      density: {
-        enable: true,
-        area: 800
-      }
-    },
-    color: {
-      value: "#006400"
-    },
-    shape: {
-      type: "polygon",
-      polygon: {
-        nb_sides: 6
-      }
-    },
-    opacity: {
-      value: 0.7,
-      random: true,
-      anim: {
-        enable: true,
-        speed: 1,
-        opacity_min: 0.3,
-        sync: false
-      }
-    },
-    size: {
-      value: { min: 3, max: 8 },
-      random: true,
-      anim: {
-        enable: true,
-        speed: 3,
-        size_min: 2,
-        sync: false
-      }
-    },
-    move: {
-      enable: true,
-      speed: 2,
-      direction: "none",
-      random: true,
-      straight: false,
-      outMode: "out"
-    }
+    number: { value: 40, density: { enable: true, area: 800 } },
+    color: { value: "#006400" },
+    shape: { type: "polygon", polygon: { nb_sides: 6 } },
+    opacity: { value: 0.7, random: true, anim: { enable: true, speed: 1, opacity_min: 0.3, sync: false } },
+    size: { value: { min: 3, max: 8 }, random: true, anim: { enable: true, speed: 3, size_min: 2, sync: false } },
+    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, outMode: "out" }
   },
   interactivity: {
     detectsOn: "canvas",
-    events: {
-      onHover: {
-        enable: true,
-        mode: "repulse"
-      },
-      onClick: {
-        enable: true,
-        mode: "push"
-      },
-      resize: true
-    },
-    modes: {
-      repulse: {
-        distance: 120,
-        duration: 0.4
-      },
-      push: {
-        quantity: 4
-      }
-    }
+    events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" }, resize: true },
+    modes: { repulse: { distance: 120, duration: 0.4 }, push: { quantity: 4 } }
   },
   retina_detect: true
 });
