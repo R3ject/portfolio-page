@@ -1,23 +1,19 @@
+// Animate GitHub Link on Load and Add Hover Animations
 window.addEventListener('load', () => {
   const githubLink = document.querySelector('.github-link');
   if (githubLink) {
-    // Initial pop-in animation on page load
     gsap.fromTo(githubLink, 
       { scale: 0.8, opacity: 0 }, 
       { scale: 1, opacity: 1, duration: 1, ease: "back.out(1.7)" }
     );
-
-    // Add GSAP hover animations (optional, as CSS hover already applies a scale)
     githubLink.addEventListener('mouseenter', () => {
       gsap.to(githubLink, { scale: 1.1, duration: 0.3, ease: "power1.out" });
     });
-    
     githubLink.addEventListener('mouseleave', () => {
       gsap.to(githubLink, { scale: 1, duration: 0.3, ease: "power1.out" });
     });
   }
 });
-
 
 // ------------------------------
 // Project Details
@@ -34,7 +30,7 @@ const projectDetails = {
       <ul>
         <li><strong>Frontend:</strong> React, React Router, React-QR-Scanner, React Toastify</li>
         <li><strong>Backend:</strong> Firebase Authentication, Cloud Firestore</li>
-        <li><strong>Other Tools:</strong> Geolocation API for location verification, localStorage for persistent user flags</li>
+        <li><strong>Other Tools:</strong> Geolocation API, localStorage</li>
       </ul>
       <h3>Challenges:</h3>
       <ul>
@@ -60,11 +56,12 @@ const projectDetails = {
       <h3>How to Use Digital Punch Card</h3>
       <ol>
         <li>Create a new login.</li>
-        <li>When you are ready to scan the QR code provided below, click on the "Enable Demo Mode" button in the bottom left corner of the Punch Card page to bypass the geolocation verification.
-        <br />
-        <img src="public/demo-button.png" alt="Demo button locatoin" class="how-to-img">
-        <br />
-        <img src="public/punch-card-qr.jpg" alt="Demo QR Code" class="how-to-img">
+        <li>
+          When you are ready to scan the QR code provided below, click on the "Enable Demo Mode" button in the bottom left corner of the Punch Card page to bypass geolocation verification.
+          <br>
+          <img src="public/demo-button.png" alt="Demo button location" class="how-to-img">
+          <br>
+          <img src="public/punch-card-qr.jpg" alt="Demo QR Code" class="how-to-img">
         </li>
         <li>Next, click the "Scan QR Code" button in the top right of the page.</li>
         <li>Scan the QR code and watch as your card is punched!</li>
@@ -108,11 +105,12 @@ const projectDetails = {
       <h3>How to Use QR BINGO</h3>
       <ol>
         <li>Create a new login.</li>
-        <li>Click on the "How to Play" button towards the top of your randomly generated card.
-        <br />
-        <img src="public/bingo-how.png" alt="bingo how to play button" class="how-to-img">
+        <li>
+          Click on the "How to Play" button towards the top of your randomly generated card.
+          <br>
+          <img src="public/bingo-how.png" alt="Bingo how to play button" class="how-to-img">
         </li>
-        <li>Download the <a href="public/Archive.zip">QR Codes</a> and start scanning to see the BINGO card react.</li>
+        <li>Download the <a href="public/Archive.zip" download>QR Codes</a> and start scanning to see the BINGO card react.</li>
         <li>Go for BINGO!</li>
       </ol>
     `
@@ -153,16 +151,51 @@ const projectDetails = {
     howTo: `
       <h3>How to Use TableTracker</h3>
       <ol>
-        <li>Use the login: USER:exstaff@ex.com PASSWORD:TestAccount to log in,</li>
-        <li>Turn on Demo Mode to simulate real-time updates.
-        <br />
-        <img src="public/table-demo.png" alt="demo button location" class="how-to-img">
+        <li>Use the login: <strong>exstaff@ex.com</strong> / <strong>TestAccount</strong> to log in.</li>
+        <li>
+          Turn on Demo Mode to simulate real-time updates.
+          <br>
+          <img src="public/table-demo.png" alt="Demo button location" class="how-to-img">
         </li>
         <li>Click through everything to see the app in action!</li>
       </ol>
     `
+  },
+  project4: {
+    title: "Keg Stack Challenge",
+    description: `
+      <h3>Overview:</h3>
+      <p>
+        A physics-based stacking game built with React, Matter.js, and Firebase. (In Progress)
+      </p>
+      <h3>Tech Stack:</h3>
+      <ul>
+        <li><strong>Frontend:</strong> React</li>
+        <li><strong>Physics Engine:</strong> Matter.js</li>
+        <li><strong>Backend:</strong> Firebase</li>
+      </ul>
+      <h3>Challenges:</h3>
+      <ul>
+        <li>Implementing realistic physics-based stacking.</li>
+        <li>Integrating real-time data with Firebase.</li>
+      </ul>
+      <h3>Accomplishments:</h3>
+      <ul>
+        <li>Prototype developed—work in progress.</li>
+      </ul>
+      <p>
+        This project is in progress and demonstrates my hustle and experimentation.
+      </p>
+    `,
+    image: "public/kegstack.png",
+    link: "COMING SOON",
+    howTo: `
+      <h3>How to Use Keg Stack Challenge</h3>
+      <ol>
+        <li>Details coming soon</li>
+      </ol>
+    `
   }
-  // Additional projects can be added similarly...
 };
 
 // ------------------------------
@@ -256,14 +289,9 @@ function initTabSwitching() {
   const buttons = document.querySelectorAll('.tab-button');
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Remove active class from all tab buttons and tab contents
       buttons.forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-      
-      // Activate the clicked tab button
       btn.classList.add('active');
-      
-      // Show the corresponding tab content
       const tabId = btn.getAttribute('data-tab');
       const tabContent = document.getElementById(tabId);
       if (tabContent) {
@@ -291,7 +319,7 @@ window.addEventListener('load', () => {
   AOS.refreshHard();
 });
 
-// tsParticles initialization (configuration remains unchanged)
+// tsParticles initialization
 tsParticles.load("tsparticles", {
   background: {
     color: {

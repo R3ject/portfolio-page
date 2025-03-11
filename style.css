@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
-/* Reset some default styling */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,14 +18,12 @@
   text-align: center;
   height: 40vh;
 }
-
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
 }
-
 .hero-pic {
   width: 150px;
   height: 150px;
@@ -34,19 +32,16 @@
   margin-bottom: 1rem;
   object-fit: cover;
 }
-
 .hero-text h1 {
   font-size: 2.5rem;
   margin: 0.5rem 0;
 }
-
 .hero-text .name {
   font-family: 'Montserrat', sans-serif;
   color: #ff6600;
   display: inline-block;
   transform-origin: center center;
 }
-
 .hero-text .role {
   font-family: Arial, sans-serif;
   color: #fff;
@@ -54,16 +49,28 @@
   margin: 0.5rem 0;
 }
 
-/* Mobile adjustment: Move role to new line */
+/* Mobile: move role below name */
 @media (max-width: 768px) {
   .hero-text .role {
     display: block;
     margin-top: 0.5rem;
   }
-  
   .hero {
     height: 50vh;
+    padding: 1rem;
   }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Personal Bio */
+.bio {
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  color: #fff;
+  background: #222;
 }
 
 /* Projects Header */
@@ -71,23 +78,21 @@
   text-align: center;
   margin: 2rem 0 1rem;
 }
-
 .projects-header h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   color: #fff;
 }
-
 .projects-header p {
   font-size: 1.2rem;
-  color: #666;
+  color: #ccc;
 }
 
-/* Projects Gallery */
+/* Gallery: 3 columns per row on desktop */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; /* Increased gap for breathing room */
   justify-items: center;
   position: relative;
   z-index: 1010;
@@ -95,15 +100,17 @@
   padding: 2rem;
 }
 
+/* Standard Project Card styles */
 .project-card {
+  width: 100%;
+  max-width: 300px; /* Limit card width for consistency */
   text-align: center;
-  position: relative;
-  z-index: 1020;
-  margin-bottom: 1rem;
   background-color: #f4f4f4;
   padding: 1rem;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1020;
 }
 
 .project-card:hover {
@@ -111,30 +118,24 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Ensure images within cards have consistent spacing */
 .project-card img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: auto;
+  max-height: 180px;
   object-fit: cover;
   border-radius: 4px;
-  display: block;
-  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
-.project-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #007BFF;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+/* For flip-container project cards, maintain a consistent size */
+.flip-container {
+  width: 100%;
+  max-width: 300px;
+  perspective: 1000px;
+  cursor: pointer;
 }
 
-.project-btn:hover {
-  background-color: #0056b3;
-}
 
 /* Modal Styles */
 .modal {
@@ -150,7 +151,6 @@
   justify-content: center;
   z-index: 10000 !important;
 }
-
 .modal-content {
   background: #fff;
   margin: auto;
@@ -161,12 +161,10 @@
   position: relative;
   z-index: 10100 !important;
 }
-
 .modal-tabs {
   margin: 1rem 0;
   text-align: center;
 }
-
 .tab-button {
   background: #eee;
   border: none;
@@ -175,24 +173,19 @@
   cursor: pointer;
   transition: background 0.3s;
 }
-
 .tab-button.active,
 .tab-button:hover {
   background: #ddd;
 }
-
 .modal-tab-content {
   margin: 1rem 0;
 }
-
 .tab-content {
   display: none;
 }
-
 .tab-content.active {
   display: block;
 }
-
 .close {
   position: absolute;
   top: 10px;
@@ -201,6 +194,7 @@
   cursor: pointer;
 }
 
+/* tsParticles Canvas */
 #tsparticles > canvas {
   position: absolute;
   top: 0;
@@ -225,94 +219,95 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: pulse 3s infinite;
 }
-
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.03); }
 }
-
 .badge:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-
 .badge-react {
   background: linear-gradient(135deg, #61dafb, #21a1f1);
   color: #fff;
 }
-
 .badge-firebase {
   background: linear-gradient(125deg, #ff5c5c, #e53e3e);
   color: #fff;
 }
-
 .badge-mui {
   background: linear-gradient(135deg, #66bb6a, #43a047);
   color: #fff;
 }
-
 .badge-qr {
   background: linear-gradient(135deg, #b75bae, #9843a0);
   color: #fff;
 }
-
 .badge-qrgen {
   background: linear-gradient(135deg, #5bb7a3, #43a089);
   color: #fff;
 }
-
 .badge-geo {
   background: linear-gradient(135deg, #b7b25b, #97a043);
   color: #fff;
 }
+.badge-matter {
+  background: linear-gradient(135deg, #e9990f, #cf9a30);
+  color: #fff;
+}
 
-/* Footer with GitHub Link */
+/* Footer */
 .footer {
   text-align: center;
   padding: 1rem;
   background: #222;
   margin-top: 2rem;
 }
-
+.footer p {
+  margin: 0.5rem 0;
+  color: #fff;
+}
 .github-link {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   color: #fff;
   text-decoration: none;
-  background: #181717;  /* GitHub brand color */
+  background: #181717;
   padding: 0.75rem 1.5rem;
   border-radius: 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   display: inline-block;
   position: relative;
   overflow: hidden;
 }
-
 .github-link:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  /* On hover, change bakground to a gradient from dark to eectric blue */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   background: linear-gradient(135deg, #181717, #00ffff);
 }
-
-/* Optional: continuous pulse keyframe (commented out by default) */
-@keyframes githubPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.03); }
+.resume-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: none;
+  background: #007BFF;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.github-link {
-  animation: githubPulse 3s infinite;
+.resume-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-
-
-/* How-To Section & Modal */
+/* How-To Modal */
 .how-to-section {
   margin: 1rem 0;
   text-align: center;
 }
-
 .how-to-btn {
   background-color: #ff6600;
   color: #fff;
@@ -322,12 +317,10 @@
   cursor: pointer;
   transition: background 0.3s, transform 0.3s;
 }
-
 .how-to-btn:hover {
   background-color: #e65c00;
   transform: scale(1.05);
 }
-
 #howToModal {
   display: none;
   position: fixed;
@@ -341,7 +334,6 @@
   justify-content: center;
   z-index: 11000;
 }
-
 #howToModal .modal-content {
   background: #fff;
   margin: auto;
@@ -351,7 +343,6 @@
   width: 90%;
   position: relative;
 }
-
 .how-to-img {
   max-width: 90%;
   height: auto;
@@ -366,46 +357,59 @@
     height: 50vh;
     padding: 1rem;
   }
-  
   .hero-text h1 {
     font-size: 2rem;
   }
-  
   .hero-pic {
     width: 100px;
     height: 100px;
   }
-  
   .projects-header h2 {
     font-size: 1.8rem;
   }
-  
   .projects-header p {
     font-size: 1rem;
   }
-  
   .gallery {
     grid-template-columns: 1fr;
     padding: 1rem;
   }
-  
   .project-card {
     padding: 0.75rem;
     margin-bottom: 1rem;
   }
-  
   .modal-content {
     width: 95%;
   }
-  
   .badge {
     font-size: 0.75rem;
     padding: 0.4rem 0.8rem;
   }
-  
-  /* For mobile, move the role below the name */
+  /* On mobile, move the role to a new line */
   .hero-text .role {
     display: block;
     margin-top: 0.5rem;
   }
+}
+
+a {
+  color: white;
+}
+
+.in-progress-label {
+  background: #ff4500; /* Vibrant orange-red */
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  display: inline-block;
+  /* Optional: subtle pulse animation to draw attention */
+  animation: pulseProgress 3s infinite;
+}
+
+@keyframes pulseProgress {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }

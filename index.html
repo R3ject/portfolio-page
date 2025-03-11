@@ -7,17 +7,17 @@
   <link rel="stylesheet" href="style.css" />
   <!-- AOS Library for scroll animations -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <!-- Custom Font for Hero Name -->
+  <!-- Custom Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- tsParticles container -->
-  <div id="tsparticles" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -100; pointer-events: none;"></div>
+  <div id="tsparticles" aria-hidden="true" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -100; pointer-events: none;"></div>
   
   <!-- Hero Section -->
   <header class="hero">
     <div class="hero-content">
-      <img src="public/taylor.png" alt="Taylor Ball" class="hero-pic" />
+      <img src="public/taylor.png" alt="Portrait of Taylor Ball" class="hero-pic" />
       <div class="hero-text">
         <h1>
           <span class="name">Taylor Ball</span>: <span class="role">Brewpub GM to Dev</span>
@@ -27,6 +27,11 @@
     </div>
   </header>
   
+  <!-- Personal Bio Section -->
+  <section class="bio">
+    <p>Hi, I’m Taylor—a brewpub GM who traded kegs for code. Self-taught via freeCodeCamp, I build tools like TableTracker to solve real problems. When I’m not coding, you’ll find me biking or working on cars.</p>
+  </section>
+  
   <!-- Content Wrapper -->
   <div class="content-wrapper">
     <!-- Projects Header -->
@@ -35,72 +40,102 @@
       <p>Showcasing my work</p>
     </div>
     
-    <!-- Projects Gallery -->
+    <!-- Projects Gallery: 3 columns per row on desktop -->
     <section class="gallery">
       <!-- Digital Punch Card -->
-      <div class="project-card" data-aos="fade-up" onclick="openModal('project1')">
-        <img src="public/beer-filled.png" alt="Project Thumbnail" />
-        <h2>Digital Punch Card</h2>
-        <p>The Digital Punch Card App delivers real-time, geolocation-verified loyalty rewards via QR code scanning.</p>
-        <div class="badges">
-          <span class="badge badge-react">React</span>
-          <span class="badge badge-firebase">Firebase</span>
-          <span class="badge badge-qr">React QR Scanner</span>
-        </div>
+      <div class="project-card flip-container" data-aos="fade-up" onclick="openModal('project1')" tabindex="0" aria-label="Open Digital Punch Card details">
+        <div class="flipper">
+          <div class="front">
+            <img src="public/beer-filled.png" alt="Digital Punch Card screenshot" />
+            <h2>Digital Punch Card</h2>
+            <p>Real-time, geolocation-verified loyalty rewards.</p>
+          </div>
+            <div class="badges">
+              <span class="badge badge-react">React</span>
+              <span class="badge badge-firebase">Firebase</span>
+              <span class="badge badge-qr">React QR Scanner</span>
+            </div>
+          </div>
       </div>
       
       <!-- QR BINGO -->
-      <div class="project-card" data-aos="fade-up" onclick="openModal('project2')">
-        <img src="public/Bingo.png" alt="Project Thumbnail" />
-        <h2>QR BINGO</h2>
-        <p>Developed an interactive Bingo app for a brewery's loyalty program, allowing users to complete tasks, earn rewards, and track progress via QR code scanning.</p>
-        <div class="badges">
-          <span class="badge badge-react">React</span>
-          <span class="badge badge-firebase">Firebase</span>
-          <span class="badge badge-qrgen">QR Code Generation</span>
-        </div>
+      <div class="project-card flip-container" data-aos="fade-up" onclick="openModal('project2')" tabindex="0" aria-label="Open QR BINGO details">
+        <div class="flipper">
+          <div class="front">
+            <img src="public/Bingo.png" alt="QR BINGO screenshot" />
+            <h2>QR BINGO</h2>
+            <p>Scan QR codes to track your Bingo progress.</p>
+          </div>
+            <div class="badges">
+              <span class="badge badge-react">React</span>
+              <span class="badge badge-firebase">Firebase</span>
+              <span class="badge badge-qrgen">QR Code Generation</span>
+            </div>
+          </div>
       </div>
       
       <!-- TableTracker -->
-      <div class="project-card" data-aos="fade-up" onclick="openModal('project3')">
-        <img src="public/table.png" alt="Project Thumbnail" />
-        <h2>TableTracker</h2>
-        <p>TableTracker is a real-time, geolocation-verified table management system for brewpubs.</p>
-        <div class="badges">
-          <span class="badge badge-react">React</span>
-          <span class="badge badge-firebase">Firebase</span>
-          <span class="badge badge-mui">MUI</span>
-          <span class="badge badge-geo">Geolocation</span>
-        </div>
+      <div class="project-card flip-container" data-aos="fade-up" onclick="openModal('project3')" tabindex="0" aria-label="Open TableTracker details">
+        <div class="flipper">
+          <div class="front">
+            <img src="public/table.png" alt="TableTracker screenshot" />
+            <h2>TableTracker</h2>
+            <p>Real-time table management for brewpubs.</p>
+          </div>
+            <div class="badges">
+              <span class="badge badge-react">React</span>
+              <span class="badge badge-firebase">Firebase</span>
+              <span class="badge badge-mui">MUI</span>
+              <span class="badge badge-geo">Geolocation</span>
+            </div>
+          </div>
+      </div>
+      
+      <!-- Keg Stack Challenge (In Progress) -->
+      <div class="project-card flip-container" data-aos="fade-up" onclick="openModal('project4')" tabindex="0" aria-label="Open Keg Stack Challenge teaser">
+        <div class="flipper">
+          <div class="front">
+            <img src="public/kegstack.png" alt="Keg Stack Challenge teaser" />
+            <h2><span class="in-progress-label">In Progress:</span> Keg Stack Challenge</h2>
+            <p>Physics-based stacking game</p>
+          </div>
+            <div class="teaser">
+              <p>Coming Soon!</p>
+              <div class="badges">
+                <span class="badge badge-react">React</span>
+                <span class="badge badge-firebase">Firebase</span>
+                <span class="badge badge-matter">Matter.js</span>
+            </div>
+          </div>
       </div>
     </section>
   </div>
   
   <!-- Project Modal -->
-  <div id="projectModal" class="modal">
+  <div id="projectModal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
+      <button class="close" onclick="closeModal()" aria-label="Close project details">&times;</button>
       <div id="modal-body">
-        <!-- Project details will be injected here -->
+        <!-- Project details injected here -->
       </div>
     </div>
   </div>
   
   <!-- How-To Modal -->
-  <div id="howToModal" class="modal">
+  <div id="howToModal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-content">
-      <span class="close" onclick="closeHowToModal()">&times;</span>
+      <button class="close" onclick="closeHowToModal()" aria-label="Close how-to instructions">&times;</button>
       <div id="howToBody">
-        <!-- How-to instructions will be injected here -->
+        <!-- How-to instructions injected here -->
       </div>
     </div>
   </div>
   
-  <!-- Footer with GitHub Link -->
+  <!-- Footer -->
   <footer class="footer">
-    <a class="github-link" href="https://github.com/R3ject" target="_blank">
-      <span>Visit my GitHub</span>
-    </a>
+    <p>Get in touch: <a href="mailto:taylorballcpt@gmail.com">taylorballcpt@gmail.com</a> | <a href="https://www.linkedin.com/in/taylor-ball-434568156/" target="_blank" class="linkedin-link">LinkedIn</a></p>
+    <p><a class="github-link" href="https://github.com/R3ject" target="_blank">Visit my GitHub</a></p>
+    <p><a class="resume-link" href="public/TaylorBall_Resume_2025.docx.pdf" download>Download Resume</a></p>
   </footer>
   
   <!-- External Libraries and Scripts -->
