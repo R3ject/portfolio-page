@@ -112,13 +112,10 @@
   position: relative;
   z-index: 1020;
 }
-
 .project-card:hover {
   transform: scale(1.05) translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-
-/* Ensure images within cards have consistent spacing */
 .project-card img {
   width: 100%;
   height: auto;
@@ -127,15 +124,6 @@
   border-radius: 4px;
   margin-bottom: 1rem;
 }
-
-/* For flip-container project cards, maintain a consistent size */
-.flip-container {
-  width: 100%;
-  max-width: 300px;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
 
 /* Modal Styles */
 .modal {
@@ -385,7 +373,6 @@
     font-size: 0.75rem;
     padding: 0.4rem 0.8rem;
   }
-  /* On mobile, move the role to a new line */
   .hero-text .role {
     display: block;
     margin-top: 0.5rem;
@@ -405,10 +392,8 @@
   border-radius: 4px;
   margin-right: 0.5rem;
   display: inline-block;
-  /* Optional: subtle pulse animation to draw attention */
   animation: pulseProgress 3s infinite;
 }
-
 @keyframes pulseProgress {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
@@ -426,7 +411,6 @@
   display: inline-block;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
-
 .project-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
