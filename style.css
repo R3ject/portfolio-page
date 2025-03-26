@@ -114,12 +114,14 @@ a {
   position: relative;
   z-index: 1020;
 }
-
 .project-card:hover {
   transform: scale(1.05) translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> temp-backup
 .project-card img {
   width: 100%;
   height: auto;
@@ -129,6 +131,7 @@ a {
   margin-bottom: 1rem;
 }
 
+<<<<<<< HEAD
 /* Flip Container (for card flip effect) */
 .flip-container {
   width: 100%;
@@ -168,6 +171,9 @@ a {
 /* =============================================================================
    MODAL STYLES
 ============================================================================= */
+=======
+/* Modal Styles */
+>>>>>>> temp-backup
 .modal {
   display: none;
   position: fixed;
@@ -451,3 +457,44 @@ a {
     margin-top: 0.5rem;
   }
 }
+<<<<<<< HEAD
+=======
+
+#contact {
+  color: white;
+}
+
+.in-progress-label {
+  background: #ff4500; /* Vibrant orange-red */
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  display: inline-block;
+  animation: pulseProgress 3s infinite;
+}
+@keyframes pulseProgress {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.project-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.project-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #0056b3, #007BFF);
+}
+>>>>>>> temp-backup
