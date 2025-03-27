@@ -1,4 +1,4 @@
-// Animate GitHub Link on Load and Add Hover Animations
+// Animate GitHub Link on Load and Hover Effects
 window.addEventListener('load', () => {
   const githubLink = document.querySelector('.github-link');
   if (githubLink) {
@@ -160,31 +160,39 @@ const projectDetails = {
     description: `
       <h3>Overview:</h3>
       <p>
-        A physics-based stacking game built with React, Matter.js, and Firebase. (In Progress)
+        Created an engaging physics-based game where players stack kegs using device tilt (mobile) or arrow keys (desktop). Keg Stack Challenge tests precision and balance, with a dynamic gravity system and real-time collision detection.
       </p>
       <h3>Tech Stack:</h3>
       <ul>
-        <li><strong>Frontend:</strong> React</li>
-        <li><strong>Physics Engine:</strong> Matter.js</li>
-        <li><strong>Backend:</strong> Firebase</li>
+        <li><strong>Frontend:</strong> React, Matter.js</li>
+        <li><strong>Physics Engine:</strong> Matter.js for collision detection and gravity simulation</li>
+        <li><strong>Other Tools:</strong> DeviceOrientation API, CSS for responsive layout</li>
       </ul>
       <h3>Challenges:</h3>
       <ul>
-        <li>Implementing realistic physics-based stacking.</li>
-        <li>Integrating real-time data with Firebase.</li>
+        <li><strong>Physics Integration:</strong> Fine-tuning Matter.js for smooth keg stacking and gravity escalation.</li>
+        <li><strong>Device-Specific Controls:</strong> Implementing tilt for mobile and arrow keys for desktop without overlap.</li>
+        <li><strong>Viewport Management:</strong> Adjusting desktop height for more stacking room while preserving mobile layout.</li>
+        <li><strong>State Sync:</strong> Fixing game over persistence and duplicate UI elements.</li>
       </ul>
       <h3>Accomplishments:</h3>
       <ul>
-        <li>Prototype developed—work in progress.</li>
+        <li><strong>Cross-Platform Play:</strong> Built a seamless experience—tilt on mobile, keys on desktop.</li>
+        <li><strong>Dynamic Physics:</strong> Gravity increases with each keg, ramping up difficulty.</li>
+        <li><strong>Responsive Design:</strong> Tailored viewport—tall for desktop stacks, compact for mobile.</li>
+        <li><strong>Proof of Concept:</strong> Delivered a playable, portfolio-ready game with minimal polish.</li>
       </ul>
-      <p>This project is in progress and demonstrates my hustle and experimentation.</p>
+      <p>This project highlights physics-based gameplay, responsive design, and creative control schemes in a fun package.</p>
     `,
-    image: "public/kegstack.png",
-    link: "COMING SOON",
+    image: "public/keg-image.jpeg",
+    link: "https://r3ject.github.io/keg-stack-challenge/",
     howTo: `
-      <h3>How to Use Keg Stack Challenge</h3>
+      <h3>How to Play Keg Stack Challenge</h3>
       <ol>
-        <li>Details coming soon</li>
+        <li><strong>Desktop:</strong> Click "Add Keg" to drop a keg, then use <strong>Left/Right Arrow Keys</strong> to position it before it lands.</li>
+        <li><strong>Mobile:</strong> Tap "Add Keg" to drop a keg, then press "Enable Tilt" and tilt your device left/right to guide it.</li>
+        <li>Stack kegs on the base—don’t let them fall off, or it's game over!</li>
+        <li>Hit "Reset" to start over and try for a higher score.</li>
       </ol>
     `
   }

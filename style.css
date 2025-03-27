@@ -140,6 +140,16 @@ a {
   border-radius: 4px;
   margin-bottom: 1rem;
 }
+.project-btn {
+  background-color: #160af5;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
 
 /* =============================================================================
    MODAL STYLES
