@@ -195,8 +195,48 @@ const projectDetails = {
         <li>Hit "Reset" to start over and try for a higher score.</li>
       </ol>
     `
-  }
+  },
+    project5: {
+      title: "Trail Pin",
+      description: `
+        <h3>Overview:</h3>
+        <p>
+          Trail Pin is a mountain biking memory map app that allows riders to drop pins on an interactive map for every trail they've ridden. Users can attach photos and add notes, creating a digital scrapbook of their rides.
+        </p>
+        <h3>Tech Stack:</h3>
+        <ul>
+          <li><strong>Frontend:</strong> React, Leaflet.js</li>
+          <li><strong>Backend & Data:</strong> Firebase (Authentication, Firestore), Cloudinary for image uploads</li>
+          <li><strong>Other Tools:</strong> HTML5 File API, CSS for responsive design</li>
+        </ul>
+        <h3>Challenges:</h3>
+        <ul>
+          <li><strong>Map Interactivity:</strong> Creating an intuitive, responsive map interface that allows users to easily drop and view pins.</li>
+          <li><strong>Offline Support:</strong> Implementing offline-first features to let users browse and add pins without constant connectivity.</li>
+          <li><strong>Image Handling:</strong> Efficiently uploading and displaying images using Cloudinary.</li>
+        </ul>
+        <h3>Accomplishments:</h3>
+        <ul>
+          <li><strong>Intuitive UI:</strong> A clean, visual-first interface that focuses on user experience over heavy data metrics.</li>
+          <li><strong>Responsive Design:</strong> A fully responsive layout that adapts seamlessly between mobile and desktop views.</li>
+          <li><strong>Performance:</strong> Code splitting, caching, and offline support that enhance load times and user engagement.</li>
+        </ul>
+        <p>This project demonstrates the creative use of modern web technologies to deliver a unique, user-friendly experience for mountain bikers.</p>
+      `,
+      image: "public/trailpin.png",
+      link: "https://trailpin-fbdc7.web.app/",
+      howTo: `
+        <h3>How to Use Trail Pin</h3>
+        <ol>
+          <li><strong>Add a Pin:</strong> Click or tap on the map to drop a pin, then enter the trail name, date, and a brief note.</li>
+          <li><strong>Upload Photos:</strong> Attach one to three photos to visually capture your ride.</li>
+          <li><strong>View Timeline:</strong> Browse your rides chronologically in the timeline sidebar.</li>
+          <li><strong>Filter Rides:</strong> Use the filter options to search by trail name or date range.</li>
+        </ol>
+      `
+    }
 };
+
 
 // ------------------------------
 // Global Functions for Modals

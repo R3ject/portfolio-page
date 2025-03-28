@@ -277,7 +277,14 @@ a {
   background: linear-gradient(135deg, #e9990f, #cf9a30);
   color: #fff;
 }
-
+.badge-cloudinary {
+  background: linear-gradient(135deg, #0238f8, #02f0f8);
+  color: #fff;
+}
+.badge-leaflet {
+  background: linear-gradient(135deg, #7e7e7e, #b1b1b1);
+  color: #000;
+}
 /* =============================================================================
    IN-PROGRESS LABEL
 ============================================================================= */
