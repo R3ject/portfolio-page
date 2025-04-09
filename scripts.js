@@ -234,7 +234,51 @@ const projectDetails = {
           <li><strong>Filter Rides:</strong> Use the filter options to search by trail name or date range.</li>
         </ol>
       `
-    }
+    },
+    project6: {
+      title: "ETX Brewing Co. Chatbot – Support & Lead Capture",
+      description: `
+        <h3>Overview:</h3>
+        <p>
+          A fully functional, branded chatbot built for ETX Brewing Co. It answers FAQs, captures lead information, and notifies staff — all without paying for a third-party platform.
+        </p>
+        <h3>Features:</h3>
+        <ul>
+          <li><strong>Conversational Interface:</strong> A React-powered chat UI that mimics natural conversation.</li>
+          <li><strong>Prewritten Smart Responses:</strong> Detects keywords (e.g., "hours", "menu", "booking") and returns customized replies.</li>
+          <li><strong>Lead Form Integration:</strong> Triggered by keywords such as “catering” or “quote”, letting users submit contact details.</li>
+          <li><strong>Form Validation:</strong> Real-time checks for valid name, email, phone, and message with immediate feedback.</li>
+          <li><strong>Auto-Close & Confirmation:</strong> Displays a thank you message and auto-closes after submission.</li>
+          <li><strong>Clear Chat & Scroll Logic:</strong> A "Clear Chat" button with smooth auto-scrolling to keep up with new messages.</li>
+          <li><strong>Spam Protection & Rate Limiting:</strong> Express middleware ensures the API is protected from abuse.</li>
+          <li><strong>Email Notifications & Logging:</strong> Sends email notifications for new leads and logs submissions to Google Sheets.</li>
+          <li><strong>Embeddable:</strong> Deployed to Netlify so that it can be embedded on any website via a simple script tag.</li>
+        </ul>
+        <h3>Tech Stack:</h3>
+        <p>
+          <strong>Frontend:</strong> React (Vite), HTML/CSS, JavaScript<br>
+          <strong>Backend:</strong> Node.js + Express, REST API<br>
+          <strong>Integrations:</strong> Google Apps Script, Gmail SMTP (nodemailer), Google Sheets<br>
+          <strong>Deployment:</strong> Netlify (Frontend), Render (API hosting)
+        </p>
+        <h3>Why It Matters:</h3>
+        <p>
+          This chatbot reduces repetitive questions for staff, modernizes the brand’s image, and captures valuable leads without the cost of a monthly service.
+        </p>
+      `,
+      // Use a placeholder or default image if no actual image is available yet
+      image: "public/chatbotetx.png",
+      link: "https://etxbrew.com/",
+      howTo: `
+        <h3>How to Use the Chatbot</h3>
+        <ol>
+          <li>Visit the ETX Brewing Co. website.</li>
+          <li>Click on the chatbot icon located at the bottom corner of the page.</li>
+          <li>Type in your query (e.g. "What are your hours?") to see the smart responses.</li>
+          <li>If you’re interested in catering or need a quote, follow the prompt to fill out your contact details.</li>
+        </ol>
+      `
+    },
 };
 
 
