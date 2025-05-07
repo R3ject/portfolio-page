@@ -2,7 +2,6 @@
    IMPORTS & RESET
 ============================================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,30 +9,34 @@
 }
 
 /* =============================================================================
-   GLOBAL UTILITIES
+   GLOBAL
 ============================================================================= */
+html, body {
+  background: none !important;  /* let particles show */
+}
 a {
   color: white;
+  text-decoration: none;
 }
 
 /* =============================================================================
-   HERO SECTION
+   HERO
 ============================================================================= */
 .hero {
   position: relative;
   display: flex;
-  background: none;
   align-items: center;
   justify-content: center;
+  height: 40vh;
+  background: none;
   color: #fff;
   text-align: center;
-  height: 40vh;
 }
 .hero-content {
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 2;
 }
 .hero-pic {
   width: 150px;
@@ -45,49 +48,56 @@ a {
 }
 .hero-text h1 {
   font-size: 2.5rem;
-  margin: 0.5rem 0;
 }
 .hero-text .name {
   font-family: 'Montserrat', sans-serif;
   color: #ff6600;
-  display: inline-block;
-  transform-origin: center center;
 }
 .hero-text .role {
   font-family: Arial, sans-serif;
-  color: #fff;
   font-size: 1.2rem;
-  margin: 0.5rem 0;
-}
-
-/* Mobile adjustments for Hero */
-@media (max-width: 768px) {
-  .hero-text .role {
-    display: block;
-    margin-top: 0.5rem;
-  }
-  .hero {
-    height: 50vh;
-    padding: 1rem;
-  }
-  .hero-text h1 {
-    font-size: 2rem;
-  }
 }
 
 /* =============================================================================
-   PERSONAL BIO SECTION
+   BIO
 ============================================================================= */
 .bio {
   text-align: center;
   padding: 1rem 2rem;
   font-size: 1.1rem;
-  color: #fff;
+  color: #000;              /* force readable text */
   background: #222;
+}
+.marketing-bio {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  font-size: 1.15rem;
+  background: rgba(0,0,0,0.6);
+  padding: 2rem;
+  border-radius: 8px;
+  color: #fff;
 }
 
 /* =============================================================================
-   PROJECTS HEADER
+   SPLIT SCREEN
+============================================================================= */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  .content-wrapper {
+    display: block;
+    padding: 1rem;
+  }
+}
+
+/* =============================================================================
+   PROJECTS
 ============================================================================= */
 .projects-header {
   text-align: center;
@@ -95,363 +105,166 @@ a {
 }
 .projects-header h2 {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
+  color: #000;             /* ensure black heading */
 }
 .projects-header p {
   font-size: 1.2rem;
-  color: #ccc;
+  color: #555;
 }
 
-/* =============================================================================
-   GALLERY & PROJECT CARDS
-============================================================================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   justify-items: center;
-  position: relative;
-  z-index: 1010;
-  background-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255,255,255,0.95) !important;  /* restore white backdrop */
   padding: 2rem;
+  z-index: 0;
 }
-
 .project-card {
   width: 100%;
   max-width: 300px;
-  text-align: center;
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   padding: 1rem;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  z-index: 1020;
+  text-align: center;
+  transition: transform .3s, box-shadow .3s;
 }
 .project-card:hover {
   transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 .project-card img {
   width: 100%;
-  height: auto;
   max-height: 180px;
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 1rem;
 }
-.project-btn {
-  background-color: #160af5;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
+.project-card h2,
+.project-card p {
+  color: #000;            /* force black text */
 }
 
+/* badges */
+.badges { margin-top: .5rem; }
+.badge {
+  display: inline-block;
+  padding: .5rem 1rem;
+  margin: .3rem;
+  border-radius: 20px;
+  font-size: .85rem;
+  font-weight: bold;
+  transition: transform .3s, box-shadow .3s;
+}
+.badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+/* keep your existing badge-color variants below… */
+.badge-react { background: linear-gradient(135deg, #61dafb, #21a1f1); color: #fff; }
+.badge-firebase { background: linear-gradient(125deg, #ff5c5c, #e53e3e); color: #fff; }
+.badge-mui { background: linear-gradient(135deg, #66bb6a, #43a047); color: #fff; }
+.badge-qr { background: linear-gradient(135deg, #b75bae, #9843a0); color: #fff; }
+.badge-qrgen { background: linear-gradient(135deg, #5bb7a3, #43a089); color: #fff; }
+.badge-geo { background: linear-gradient(135deg, #b7b25b, #97a043); color: #fff; }
+.badge-matter { background: linear-gradient(135deg, #e9990f, #cf9a30); color: #fff; }
 
 /* =============================================================================
-   MODAL STYLES
+   MARKETING
 ============================================================================= */
-.modal {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background: rgba(0, 0, 0, 0.8);
-  align-items: center;
-  justify-content: center;
-  z-index: 10000 !important;
+.marketing h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
 }
-.modal-content {
-  background: #fff;
-  margin: auto;
+.marketing-cards,
+.social-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  background: none;
+}
+.marketing-card {
+  background: rgba(0,0,0,0.5);
   padding: 1.5rem;
   border-radius: 8px;
-  max-width: 600px;
-  width: 90%;
-  position: relative;
-  z-index: 10100 !important;
-}
-.modal-tabs {
-  margin: 1rem 0;
   text-align: center;
+  transition: transform .3s, box-shadow .3s;
 }
-.tab-button {
-  background: #eee;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin: 0 0.25rem;
-  cursor: pointer;
-  transition: background 0.3s;
+.marketing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
-.tab-button.active,
-.tab-button:hover {
-  background: #ddd;
+.marketing-card img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
 }
-.modal-tab-content {
-  margin: 1rem 0;
+/* restore white backing for the black “4 The Girls” logo */
+.marketing-card img[alt*="4 The Girls"] {
+  background-color: #fff;
+  padding: .5rem;
+  border-radius: 6px;
 }
-.tab-content {
-  display: none;
+.marketing-card h3 {
+  color: #fff;
+  font-size: 1.1rem;
 }
-.tab-content.active {
-  display: block;
+.social-cards .marketing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
+.social-cards i {
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+  color: #fff;
 }
 
 /* =============================================================================
-   TS PARTICLES CANVAS
+   MODALS, FOOTER… keep your existing rules
+============================================================================= */
+
+/* =============================================================================
+   tsParticles
 ============================================================================= */
 #tsparticles > canvas {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   z-index: -100 !important;
   pointer-events: none;
 }
 
-/* =============================================================================
-   BADGES
-============================================================================= */
-.badge {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin: 0.3rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: pulse 3s infinite;
-}
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-}
-.badge:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+/* ───────────────────────────────────────────────────────────────────────────
+   FIX: make bio & projects-heading visible again
+──────────────────────────────────────────────────────────────────────────── */
+
+/* Restore your bio to white text on its dark overlay */
+.bio {
+  color: #fff !important;
 }
 
-/* Badge Variants */
-.badge-react {
-  background: linear-gradient(135deg, #61dafb, #21a1f1);
-  color: #fff;
-}
-.badge-firebase {
-  background: linear-gradient(125deg, #ff5c5c, #e53e3e);
-  color: #fff;
-}
-.badge-mui {
-  background: linear-gradient(135deg, #66bb6a, #43a047);
-  color: #fff;
-}
-.badge-qr {
-  background: linear-gradient(135deg, #b75bae, #9843a0);
-  color: #fff;
-}
-.badge-qrgen {
-  background: linear-gradient(135deg, #5bb7a3, #43a089);
-  color: #fff;
-}
-.badge-geo {
-  background: linear-gradient(135deg, #b7b25b, #97a043);
-  color: #fff;
-}
-.badge-matter {
-  background: linear-gradient(135deg, #e9990f, #cf9a30);
-  color: #fff;
-}
-.badge-cloudinary {
-  background: linear-gradient(135deg, #0238f8, #02f0f8);
-  color: #fff;
-}
-.badge-leaflet {
-  background: linear-gradient(135deg, #7e7e7e, #b1b1b1);
-  color: #000;
-}
-.badge-google {
-  background: linear-gradient(135deg, #0d8f02, #0205da);
-  color: #ffffff;
-}
-/* =============================================================================
-   IN-PROGRESS LABEL
-============================================================================= */
-.in-progress-label {
-  background: #ff4500;
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: bold;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  margin-right: 0.5rem;
-  display: inline-block;
-  animation: pulseProgress 3s infinite;
-}
-@keyframes pulseProgress {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+/* Keep your marketing‑twist bio white too */
+.marketing-bio {
+  color: #fff !important;
 }
 
-/* =============================================================================
-   FOOTER
-============================================================================= */
-.footer {
-  text-align: center;
-  padding: 1rem;
+/* “My Projects” heading & subtext should be white on the dark background */
+.projects-header h2 {
+  color: #fff !important;
+}
+.projects-header p {
+  color: #ccc !important;
+}
 
-  margin-top: 2rem;
-}
-.footer p {
-  margin: 0.5rem 0;
-  color: #fff;
-}
-.github-link {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  color: #fff;
-  text-decoration: none;
-  background: #181717;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  display: inline-block;
+/* make sure they sit above the particles canvas */
+.bio,
+.projects-header {
   position: relative;
-  overflow: hidden;
-}
-.github-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(135deg, #181717, #00ffff);
-}
-.resume-link {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
-  color: #fff;
-  text-decoration: none;
-  background: #007BFF;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  margin-top: 1rem;
-  display: inline-block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.resume-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* =============================================================================
-   HOW-TO MODAL
-============================================================================= */
-.how-to-img {
-  max-width: 90%;
-  height: auto;
-  margin: 0.5rem 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-.how-to-section {
-  margin: 1rem 0;
-  text-align: center;
-}
-.how-to-btn {
-  background-color: #ff6600;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-.how-to-btn:hover {
-  background-color: #e65c00;
-  transform: scale(1.05);
-}
-#howToModal {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background: rgba(0, 0, 0, 0.8);
-  align-items: center;
-  justify-content: center;
-  z-index: 11000;
-}
-#howToModal .modal-content {
-  background: #fff;
-  margin: auto;
-  padding: 1.5rem;
-  border-radius: 8px;
-  max-width: 600px;
-  width: 90%;
-  position: relative;
-}
-
-/* =============================================================================
-   MOBILE ADJUSTMENTS
-============================================================================= */
-@media (max-width: 768px) {
-  .hero {
-    height: 50vh;
-    padding: 1rem;
-  }
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-  .hero-pic {
-    width: 100px;
-    height: 100px;
-  }
-  .projects-header h2 {
-    font-size: 1.8rem;
-  }
-  .projects-header p {
-    font-size: 1rem;
-  }
-  .gallery {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-  .project-card {
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-  }
-  .modal-content {
-    width: 95%;
-  }
-  .badge {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.8rem;
-  }
-  .hero-text .role {
-    display: block;
-    margin-top: 0.5rem;
-  }
-}
-
-/* =============================================================================
-   MISCELLANEOUS
-============================================================================= */
-#contact {
-  color: white;
+  z-index: 1;
 }

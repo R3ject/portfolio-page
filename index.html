@@ -3,167 +3,193 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Projects Showcase</title>
+  <title>My Projects & Marketing Showcase</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- AOS Library for scroll animations -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pP1h8V4jHz6wqfX0+f7E7oZQzVxN6XEYX7x1ZPdhFbUFd7uD0Z/UPqlmzBZYj+S0pXZ+ObSu4yrkDMY1SVoKvg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <!-- Custom Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
-  <!-- tsParticles container -->
-  <div id="tsparticles" aria-hidden="true" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -100; pointer-events: none;"></div>
-  
-  <!-- Hero Section -->
+  <!-- tsParticles -->
+  <div id="tsparticles" aria-hidden="true"></div>
+
+  <!-- Hero -->
   <header class="hero">
     <div class="hero-content">
-      <img src="public/taylor.png" alt="Portrait of Taylor Ball" class="hero-pic" />
+      <img src="public/taylor.png" alt="Taylor Ball" class="hero-pic" />
       <div class="hero-text">
-        <h1>
-          <span class="name">Taylor Ball</span>: <span class="role">Brewpub GM to Dev</span>
-        </h1>
-        <p>Self-taught, real-world solutions</p>
+        <h1><span class="name">Taylor Ball</span>: <span class="role">Brewpub GM to Dev</span></h1>
+        <p>Self‑taught, real‑world solutions</p>
       </div>
     </div>
   </header>
-  
-  <!-- Personal Bio Section -->
-  <section class="bio">
-    <p>Hi, I’m Taylor—a brewpub GM who traded kegs for code. Self-taught via freeCodeCamp, I build tools like TableTracker to solve real problems. When I’m not coding, you’ll find me biking or working on cars.</p>
+
+  <!-- Bio -->
+  <section class="bio marketing-bio">
+    <p>
+      Hi, I’m Taylor—a brewpub GM turned self‑taught dev and brand storyteller.  
+      I build real‑world tools like TableTracker and craft compelling social media  
+      presences that boost engagement and capture leads. When I’m not coding or  
+      curating content, you’ll find me biking trails or tinkering under the hood.
+    </p>
   </section>
-  
-  <!-- Content Wrapper -->
+
+  <!-- SPLIT: Projects & Marketing -->
   <div class="content-wrapper">
-    <!-- Projects Header -->
-    <div class="projects-header">
-      <h2>My Projects</h2>
-      <p>Showcasing my work</p>
-    </div>
-    
-    <!-- Projects Gallery: 3 columns per row on desktop -->
-    <section class="gallery">
-      <!-- Digital Punch Card -->
-      <div class="project-card" data-aos="fade-up" onclick="openModal('project1')" tabindex="0" aria-label="Open Digital Punch Card details">
-        <img src="public/beer-filled.png" alt="Digital Punch Card screenshot" />
-        <h2>Digital Punch Card</h2>
-        <p>Real-time, geolocation-verified loyalty rewards.</p>
-        <div class="badges">
-          <span class="badge badge-react">React</span>
-          <span class="badge badge-firebase">Firebase</span>
-          <span class="badge badge-qr">React QR Scanner</span>
-        </div>
+
+    <!-- Projects Column -->
+    <section class="projects-column">
+      <div class="projects-header">
+        <h2>My Projects</h2>
+        <p>Showcasing my work</p>
       </div>
-      
-      <!-- QR BINGO -->
-      <div class="project-card" data-aos="fade-up" onclick="openModal('project2')" tabindex="0" aria-label="Open QR BINGO details">
-        <img src="public/Bingo.png" alt="QR BINGO screenshot" />
-        <h2>QR BINGO</h2>
-        <p>Scan QR codes to track your Bingo progress.</p>
-        <div class="badges">
-          <span class="badge badge-react">React</span>
-          <span class="badge badge-firebase">Firebase</span>
-          <span class="badge badge-qrgen">QR Code Generation</span>
+      <div class="gallery">
+        <!-- 1. Digital Punch Card -->
+        <div class="project-card" data-aos="fade-up" onclick="openModal('project1')">
+          <img src="public/beer-filled.png" alt="Digital Punch Card" />
+          <h2>Digital Punch Card</h2>
+          <p>Real‑time, geolocation‑verified loyalty rewards.</p>
+          <div class="badges">
+            <span class="badge badge-react">React</span>
+            <span class="badge badge-firebase">Firebase</span>
+            <span class="badge badge-qr">React QR Scanner</span>
+          </div>
         </div>
-      </div>
-      
-      <!-- TableTracker -->
-      <div class="project-card" data-aos="fade-up" onclick="openModal('project3')" tabindex="0" aria-label="Open TableTracker details">
-        <img src="public/table.png" alt="TableTracker screenshot" />
-        <h2>TableTracker</h2>
-        <p>Real-time table management for brewpubs.</p>
-        <div class="badges">
-          <span class="badge badge-react">React</span>
-          <span class="badge badge-firebase">Firebase</span>
-          <span class="badge badge-mui">MUI</span>
-          <span class="badge badge-geo">Geolocation</span>
+        <!-- 2. Task Console -->
+        <div class="project-card" data-aos="fade-up" onclick="openModal('project7')">
+          <img src="public/checklist.png" alt="Task Console" />
+          <h2>Task Console</h2>
+          <p>Shift‑based task manager for kitchen ops.</p>
+          <div class="badges">
+            <span class="badge badge-react">React</span>
+            <span class="badge badge-firebase">Firebase</span>
+            <span class="badge badge-cron">Cron Jobs</span>
+            <span class="badge badge-emailjs">EmailJS</span>
+          </div>
         </div>
-      </div>
-      
-      <!-- Keg Stack Challenge -->
-      <div class="project-card" data-aos="fade-up" onclick="openModal('project4')" tabindex="0" aria-label="Open Keg Stack Challenge details">
-        <img src="public/kegstack.png" alt="Keg Stack Challenge" />
-        <h2>Keg Stack Challenge</h2>
-        <p>Physics-based stacking game</p>
-        <div class="badges">
-          <span class="badge badge-react">React</span>
-          <span class="badge badge-firebase">Firebase</span>
-          <span class="badge badge-matter">Matter.js</span>
+        <!-- 3. TableTracker -->
+        <div class="project-card" data-aos="fade-up" onclick="openModal('project3')">
+          <img src="public/table.png" alt="TableTracker" />
+          <h2>TableTracker</h2>
+          <p>Real‑time table management for brewpubs.</p>
+          <div class="badges">
+            <span class="badge badge-react">React</span>
+            <span class="badge badge-firebase">Firebase</span>
+            <span class="badge badge-mui">MUI</span>
+            <span class="badge badge-geo">Geolocation</span>
+          </div>
         </div>
-      </div>
-      <!-- Trail Pin Project Card -->
-      <div class="project-card" data-aos="fade-up" onclick="openModal('project5')" tabindex="0" aria-label="Open Trail Pin details">
-        <img src="public/bike.svg" alt="Trail Pin" />
-        <h2>Trail Pin</h2>
-        <p>A mountain biking memory map app</p>
-        <div class="badges">
-         <span class="badge badge-react">React</span>
-          <span class="badge badge-leaflet">Leaflet.js</span>
-          <span class="badge badge-firebase">Firebase</span>
-          <span class="badge badge-cloudinary">Cloudinary</span>
+        <!-- 4. QR BINGO -->
+        <div class="project-card" data-aos="fade-up" onclick="openModal('project2')">
+          <img src="public/Bingo.png" alt="QR BINGO" />
+          <h2>QR BINGO</h2>
+          <p>Scan QR codes to track your Bingo progress.</p>
+          <div class="badges">
+            <span class="badge badge-react">React</span>
+            <span class="badge badge-firebase">Firebase</span>
+            <span class="badge badge-qrgen">QR Gen</span>
+          </div>
         </div>
-      </div>
-      <!-- Chat Bot -->
-      <div class="project-card" data-aos="fade-up" onclick="openModal('project6')" tabindex="0" aria-label="Open Chat Bot details">
-        <img src="public/chatbot.png" alt="ETX Brewing Co. chat bot" />
-        <h2>ETX Brewing Co. Chat Bot</h2>
-        <p>Custom support &amp; lead capture tool</p>
-        <div class="badges">
-          <span class="badge badge-react">React</span>
-          <span class="badge badge-node">Node.js/Express</span>
-          <span class="badge badge-google">Google Sheets</span>
+        <!-- 5. Trail Pin -->
+        <div class="project-card" data-aos="fade-up" onclick="openModal('project5')">
+          <img src="public/bike.svg" alt="Trail Pin" />
+          <h2>Trail Pin</h2>
+          <p>Mountain biking memory map app.</p>
+          <div class="badges">
+            <span class="badge badge-react">React</span>
+            <span class="badge badge-leaflet">Leaflet.js</span>
+            <span class="badge badge-firebase">Firebase</span>
+            <span class="badge badge-cloudinary">Cloudinary</span>
+          </div>
+        </div>
+        <!-- 6. Chat Bot -->
+        <div class="project-card" data-aos="fade-up" onclick="openModal('project6')">
+          <img src="public/chatbot.png" alt="ETX Brewing Chat Bot" />
+          <h2>ETX Brewing Chat Bot</h2>
+          <p>Custom support & lead capture tool.</p>
+          <div class="badges">
+            <span class="badge badge-react">React</span>
+            <span class="badge badge-node">Node.js/Express</span>
+            <span class="badge badge-google">Google Sheets</span>
+          </div>
+        </div>
+        <!-- 7. Keg Stack Challenge -->
+        <div class="project-card" data-aos="fade-up" onclick="openModal('project4')">
+          <img src="public/kegstack.png" alt="Keg Stack Challenge" />
+          <h2>Keg Stack Challenge</h2>
+          <p>Physics‑based stacking game.</p>
+          <div class="badges">
+            <span class="badge badge-react">React</span>
+            <span class="badge badge-firebase">Firebase</span>
+            <span class="badge badge-matter">Matter.js</span>
+          </div>
         </div>
       </div>
     </section>
-  </div>
 
-    <!-- Project Modal -->
-  <div id="projectModal" class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-      <button class="close" onclick="closeModal()" aria-label="Close project details">&times;</button>
-      <div id="modal-body">
-        <!-- Project details injected here -->
-      </div>
-    </div>
-  </div>
-  
-  <!-- How-To Modal -->
-  <div id="howToModal" class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-      <button class="close" onclick="closeHowToModal()" aria-label="Close how-to instructions">&times;</button>
-      <div id="howToBody">
-        <!-- How-to instructions injected here -->
-      </div>
-    </div>
-  </div>
-  
-  <!-- Footer -->
-  <footer class="footer">
-    <p>
-      Get in touch: <a id="contact" href="mailto:taylorballcpt@gmail.com">taylorballcpt@gmail.com</a> | 
-      <a id="contact" href="https://www.linkedin.com/in/taylor-ball-434568156/" target="_blank" class="linkedin-link">LinkedIn</a>
-    </p>
-    <p>
-      <a class="github-link" href="https://github.com/R3ject" target="_blank">Visit my GitHub</a>
-    </p>
-    <p>
-      <a class="resume-link" href="public/TaylorBall_Resume_2025.pdf" download>Download Resume</a>
-    </p>
-  </footer>
-  
-  <!-- External Libraries and Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <!-- Marketing Column -->
+    <section class="marketing-column">
+      <section class="marketing">
+        <h2 data-aos="fade-up">Marketing &amp; Brand Management</h2>
+        <div class="marketing-cards" data-aos="fade-up">
+          <div class="marketing-card">
+            <a href="https://tdgraphicdesigntx.com/" target="_blank">
+              <img src="public/tdgraphic-logo.png" alt="TD Graphic Design TX">
+              <h3>TD Graphic Design TX</h3>
+            </a>
+          </div>
+          <div class="marketing-card">
+            <a href="https://etxbrew.com/" target="_blank">
+              <img src="public/etxbrew-logo.png" alt="ETX Brewing Co.">
+              <h3>ETX Brewing Co.</h3>
+            </a>
+          </div>
+          <div class="marketing-card">
+            <a href="https://www.vividwebdevelopment.com/" target="_blank">
+              <img src="public/vividweb-logo.png" alt="Vivid Web Dev">
+              <h3>Vivid Web Development</h3>
+            </a>
+          </div>
+          <div class="marketing-card">
+            <a href="https://tiltedtripodphotos.com/" target="_blank">
+              <img src="public/tiltedtripod-logo.png" alt="Tilted Tripod Photos">
+              <h3>Tilted Tripod Photos</h3>
+            </a>
+          </div>
+          <div class="marketing-card">
+            <a href="https://4thegirlsandco.com/" target="_blank">
+              <img src="public/4thegirls-logo.png" alt="4 The Girls & Co.">
+              <h3>4 The Girls &amp; Co.</h3>
+            </a>
+          </div>
+        </div>
+        <div class="social-cards" data-aos="fade-up">
+          <div class="marketing-card">
+            <a href="https://facebook.com/YourBreweryPage" target="_blank">
+              <i class="fab fa-facebook-f"></i><h3>Facebook</h3>
+            </a>
+          </div>
+          <div class="marketing-card">
+            <a href="https://instagram.com/YourBreweryPage" target="_blank">
+              <i class="fab fa-instagram"></i><h3>Instagram</h3>
+            </a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+  </div><!-- /.content-wrapper -->
+
+  <!-- (modals, footer, scripts…) -->
+  <script> AOS.init({ offset:0, duration:600, easing:'ease-in-out', once:false }); </script>
   <script src="scripts.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      offset: 0,
-      duration: 600,
-      easing: 'ease-in-out',
-      once: false,
-      disableMutationObserver: true,
-    });
-  </script>
 </body>
 </html>

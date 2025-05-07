@@ -266,7 +266,6 @@ const projectDetails = {
           This chatbot reduces repetitive questions for staff, modernizes the brand’s image, and captures valuable leads without the cost of a monthly service.
         </p>
       `,
-      // Use a placeholder or default image if no actual image is available yet
       image: "public/chatbotetx.png",
       link: "https://etxbrew.com/",
       howTo: `
@@ -279,6 +278,48 @@ const projectDetails = {
         </ol>
       `
     },
+
+    project7: {
+      title: "Task Console",
+      description: `
+        <h3>Overview:</h3>
+        <p>
+          Task Console is a web app designed for shift-based teams—specifically kitchen operations. It allows managers to create reusable task templates, assign tasks by shift and date, track completions in real time, and receive daily email summaries.
+        </p>
+        <h3>Tech Stack:</h3>
+        <ul>
+          <li><strong>Frontend:</strong> React, Tailwind CSS</li>
+          <li><strong>Backend & Data:</strong> Firebase Realtime Database, Firebase Hosting</li>
+          <li><strong>Email Reports:</strong> EmailJS, NodeJS with Puppeteer + Cron</li>
+        </ul>
+        <h3>Challenges:</h3>
+        <ul>
+          <li><strong>Shift Handling:</strong> Built logic for AM/PM task separation and enforced a cutoff with alarm triggers if tasks are incomplete after grace period.</li>
+          <li><strong>Realtime Sync:</strong> Tasks update live between tablets and manager view using Firebase listeners.</li>
+          <li><strong>Email Logic:</strong> Integrated daily and weekly reporting with Puppeteer-triggered cron jobs and inline CSV delivery.</li>
+        </ul>
+        <h3>Accomplishments:</h3>
+        <ul>
+          <li><strong>Template System:</strong> Managers can create, edit, rename, duplicate, and assign reusable task templates per shift/day.</li>
+          <li><strong>One-Off Tasks:</strong> Supports fast entry of individual tasks for one-day use.</li>
+          <li><strong>Mobile-First:</strong> Fully optimized for kitchen tablet use with large tap targets and responsive layout.</li>
+        </ul>
+        <p>This project brings clarity, accountability, and automation to a chaotic kitchen environment using clean, efficient tools.</p>
+      `,
+      image: "public/taskconsole.png",
+      link: "https://task-console.netlify.app/",
+      howTo: `
+        <h3>How to Use Task Console</h3>
+        <ol>
+          <li><strong>View Tasks:</strong> Staff access a shift-based task list. They can tap tasks to mark them as complete and select who completed them.</li>
+          <li><strong>Send Notes:</strong> Staff can send a quick note to management with their name and message using the "Send Note" button.</li>
+          <li><strong>Manager Access:</strong> Login with a password to view live task status, download weekly CSV reports, and manage templates.</li>
+          <li><strong>Create Templates:</strong> Add reusable templates with editable task lists, then assign them to any date/shift.</li>
+          <li><strong>One-Off Tasks:</strong> Add and assign one-day tasks without saving them to a template.</li>
+        </ol>
+      `
+    },
+    
 };
 
 
