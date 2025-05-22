@@ -27,19 +27,29 @@
       <img src="public/taylor.png" alt="Taylor Ball" class="hero-pic" />
       <div class="hero-text">
         <h1><span class="name">Taylor Ball</span>: <span class="role">Brewpub GM to Dev</span></h1>
-        <p>Self‑taught, real‑world solutions</p>
+        <p>Self-taught, real-world solutions</p>
       </div>
     </div>
   </header>
 
   <!-- Bio -->
-  <section class="bio marketing-bio">
+  <section class="bio marketing-bio" data-aos="fade-up">
     <p>
-      Hi, I’m Taylor—a brewpub GM turned self‑taught dev and brand storyteller.  
-      I build real‑world tools like TableTracker and craft compelling social media  
+      Hi, I’m Taylor—a brewpub GM turned self-taught dev and brand storyteller.  
+      I build real-world tools like TableTracker and craft compelling social media  
       presences that boost engagement and capture leads. When I’m not coding or  
       curating content, you’ll find me biking trails or tinkering under the hood.
     </p>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="quick-links" data-aos="fade-up">
+    <a class="github-link" href="https://github.com/R3ject" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a class="resume-link" href="public/TaylorBall_Resume_2025.pdf" download>
+      <i class="fas fa-file-download"></i> Resume
+    </a>
   </section>
 
   <!-- SPLIT: Projects & Marketing -->
@@ -56,7 +66,7 @@
         <div class="project-card" data-aos="fade-up" onclick="openModal('project1')">
           <img src="public/beer-filled.png" alt="Digital Punch Card" />
           <h2>Digital Punch Card</h2>
-          <p>Real‑time, geolocation‑verified loyalty rewards.</p>
+          <p>Real-time, geolocation-verified loyalty rewards.</p>
           <div class="badges">
             <span class="badge badge-react">React</span>
             <span class="badge badge-firebase">Firebase</span>
@@ -67,7 +77,7 @@
         <div class="project-card" data-aos="fade-up" onclick="openModal('project7')">
           <img src="public/checklist.png" alt="Task Console" />
           <h2>Task Console</h2>
-          <p>Shift‑based task manager for kitchen ops.</p>
+          <p>Shift-based task manager for kitchen ops.</p>
           <div class="badges">
             <span class="badge badge-react">React</span>
             <span class="badge badge-firebase">Firebase</span>
@@ -79,7 +89,7 @@
         <div class="project-card" data-aos="fade-up" onclick="openModal('project3')">
           <img src="public/table.png" alt="TableTracker" />
           <h2>TableTracker</h2>
-          <p>Real‑time table management for brewpubs.</p>
+          <p>Real-time table management for brewpubs.</p>
           <div class="badges">
             <span class="badge badge-react">React</span>
             <span class="badge badge-firebase">Firebase</span>
@@ -125,7 +135,7 @@
         <div class="project-card" data-aos="fade-up" onclick="openModal('project4')">
           <img src="public/kegstack.png" alt="Keg Stack Challenge" />
           <h2>Keg Stack Challenge</h2>
-          <p>Physics‑based stacking game.</p>
+          <p>Physics-based stacking game.</p>
           <div class="badges">
             <span class="badge badge-react">React</span>
             <span class="badge badge-firebase">Firebase</span>
@@ -167,7 +177,7 @@
           <div class="marketing-card">
             <a href="https://4thegirlsandco.com/" target="_blank">
               <img src="public/4thegirls-logo.png" alt="4 The Girls & Co.">
-              <h3>4 The Girls &amp; Co.</h3>
+              <h3>4 The Girls & Co.</h3>
             </a>
           </div>
         </div>
@@ -188,7 +198,7 @@
 
   </div><!-- /.content-wrapper -->
 
-  <!-- (modals, footer, scripts…) -->
+  <!-- Scripts & AOS init -->
   <script> AOS.init({ offset:0, duration:600, easing:'ease-in-out', once:false }); </script>
   <script src="scripts.js"></script>
 </body>
