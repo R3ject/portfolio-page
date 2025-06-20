@@ -65,8 +65,8 @@ a {
   text-align: center;
   padding: 1rem 2rem;
   font-size: 1.1rem;
-  color: #000;              /* force readable text */
   background: #222;
+  color: #fff !important;
 }
 .marketing-bio {
   max-width: 800px;
@@ -77,6 +77,49 @@ a {
   padding: 2rem;
   border-radius: 8px;
   color: #fff;
+}
+
+/* =============================================================================
+   QUICK LINKS
+============================================================================= */
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.quick-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: .75rem 1.5rem;
+  border-radius: 30px;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.quick-links .github-link {
+  background: #181717;
+  color: #fff;
+}
+.quick-links .github-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  background: linear-gradient(135deg, #181717, #3c3c3c);
+}
+.quick-links .resume-link {
+  background: #007BFF;
+  color: #fff;
+}
+.quick-links .resume-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  background: linear-gradient(135deg, #0056d4, #007BFF);
+}
+.quick-links i {
+  font-size: 1.2rem;
 }
 
 /* =============================================================================
@@ -102,22 +145,23 @@ a {
 .projects-header {
   text-align: center;
   margin: 2rem 0 1rem;
+  position: relative; z-index: 1;
 }
 .projects-header h2 {
   font-size: 2rem;
-  color: #000;             /* ensure black heading */
+  color: #fff !important;
 }
 .projects-header p {
   font-size: 1.2rem;
-  color: #555;
+  color: #ccc !important;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 2rem;
   justify-items: center;
-  background: rgba(255,255,255,0.95) !important;  /* restore white backdrop */
+  background: rgba(255,255,255,0.95);
   padding: 2rem;
   z-index: 0;
 }
@@ -143,10 +187,10 @@ a {
 }
 .project-card h2,
 .project-card p {
-  color: #000;            /* force black text */
+  color: #000;
 }
 
-/* badges */
+/* Badges */
 .badges { margin-top: .5rem; }
 .badge {
   display: inline-block;
@@ -161,14 +205,19 @@ a {
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-/* keep your existing badge-color variants below… */
-.badge-react { background: linear-gradient(135deg, #61dafb, #21a1f1); color: #fff; }
-.badge-firebase { background: linear-gradient(125deg, #ff5c5c, #e53e3e); color: #fff; }
-.badge-mui { background: linear-gradient(135deg, #66bb6a, #43a047); color: #fff; }
-.badge-qr { background: linear-gradient(135deg, #b75bae, #9843a0); color: #fff; }
-.badge-qrgen { background: linear-gradient(135deg, #5bb7a3, #43a089); color: #fff; }
-.badge-geo { background: linear-gradient(135deg, #b7b25b, #97a043); color: #fff; }
-.badge-matter { background: linear-gradient(135deg, #e9990f, #cf9a30); color: #fff; }
+.badge-react    { background: linear-gradient(135deg,#61dafb,#21a1f1); color:#fff; }
+.badge-firebase { background: linear-gradient(125deg,#ff5c5c,#e53e3e); color:#fff; }
+.badge-mui      { background: linear-gradient(135deg,#66bb6a,#43a047); color:#fff; }
+.badge-qr       { background: linear-gradient(135deg,#b75bae,#9843a0); color:#fff; }
+.badge-qrgen    { background: linear-gradient(135deg,#5bb7a3,#43a089); color:#fff; }
+.badge-geo      { background: linear-gradient(135deg,#b7b25b,#97a043); color:#fff; }
+.badge-matter   { background: linear-gradient(135deg,#e9990f,#cf9a30); color:#fff; }
+.badge-cron     { background: linear-gradient(135deg,#0ce868,#21a1f1); color:#fff; }
+.badge-emailjs  { background: linear-gradient(125deg,#c6ff5c,#e53e3e); color:#fff; }
+.badge-leaflet  { background: linear-gradient(135deg,#057a0b,#94f00a); color:#fff; }
+.badge-cloudinary{ background: linear-gradient(135deg,#acacac,#8b78ce); color:#fff; }
+.badge-node     { background: linear-gradient(135deg,#ebab09,#ee0ad0); color:#fff; }
+.badge-google   { background: linear-gradient(135deg,#02f6a8,#97a043); color:#fff; }
 
 /* =============================================================================
    MARKETING
@@ -181,142 +230,72 @@ a {
 .marketing-cards,
 .social-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto 3rem;
-  background: none;
+  max-width:1200px;
+  margin:0 auto 3rem;
+  background:none;
 }
 .marketing-card {
   background: rgba(0,0,0,0.5);
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform .3s, box-shadow .3s;
+  padding:1.5rem;
+  border-radius:8px;
+  text-align:center;
+  transition:transform .3s,box-shadow .3s;
 }
 .marketing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
 }
 .marketing-card img {
-  max-width: 100%;
-  max-height: 80px;
-  object-fit: contain;
-  margin-bottom: 1rem;
+  max-width:100%;
+  max-height:80px;
+  object-fit:contain;
+  margin-bottom:1rem;
 }
-/* restore white backing for the black “4 The Girls” logo */
 .marketing-card img[alt*="4 The Girls"] {
-  background-color: #fff;
-  padding: .5rem;
-  border-radius: 6px;
+  background:#fff; padding:.5rem; border-radius:6px;
 }
 .marketing-card h3 {
-  color: #fff;
-  font-size: 1.1rem;
+  color:#fff; font-size:1.1rem;
 }
-.social-cards .marketing-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.social-cards i {
-  font-size: 2.5rem;
-  margin-bottom: .5rem;
-  color: #fff;
-}
+.social-cards .marketing-card { display:flex; flex-direction:column; justify-content:center; }
+.social-cards i { font-size:2.5rem; margin-bottom:.5rem; color:#fff; }
 
 /* =============================================================================
-   MODALS, FOOTER… keep your existing rules
+   MODAL OVERLAY & CONTENT
 ============================================================================= */
+.modal {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.8);
+  align-items:center;
+  justify-content:center;
+  z-index:10000;
+}
+.modal.show {
+  display:flex;
+}
+.modal-content {
+  background:#fff;
+  padding:1.5rem;
+  border-radius:8px;
+  max-width:600px;
+  width:90%;
+  max-height:90vh;
+  overflow-y:auto;
+  position:relative;
+}
 
 /* =============================================================================
    tsParticles
 ============================================================================= */
 #tsparticles > canvas {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: -100 !important;
-  pointer-events: none;
-}
-
-/* ───────────────────────────────────────────────────────────────────────────
-   FIX: make bio & projects-heading visible again
-──────────────────────────────────────────────────────────────────────────── */
-
-/* Restore your bio to white text on its dark overlay */
-.bio {
-  color: #fff !important;
-}
-
-/* Keep your marketing‑twist bio white too */
-.marketing-bio {
-  color: #fff !important;
-}
-
-/* “My Projects” heading & subtext should be white on the dark background */
-.projects-header h2 {
-  color: #fff !important;
-}
-.projects-header p {
-  color: #ccc !important;
-}
-
-/* make sure they sit above the particles canvas */
-.bio,
-.projects-header {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* ────────────────────────────────────────────────────────────────────────────
-   QUICK LINKS: GitHub & Resume buttons
-─────────────────────────────────────────────────────────────────────────────── */
-.quick-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.quick-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* GitHub button */
-.quick-links .github-link {
-  background: #181717;
-  color: #fff;
-}
-.quick-links .github-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-  background: linear-gradient(135deg, #181717, #3c3c3c);
-}
-
-/* Resume button */
-.quick-links .resume-link {
-  background: #007BFF;
-  color: #fff;
-}
-.quick-links .resume-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-  background: linear-gradient(135deg, #0056d4, #007BFF);
-}
-
-/* Icon sizing */
-.quick-links i {
-  font-size: 1.2rem;
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  z-index:-100!important;
+  pointer-events:none;
 }

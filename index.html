@@ -13,12 +13,9 @@
     referrerpolicy="no-referrer"
   />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
-  <!-- tsParticles -->
+  <!-- tsParticles canvas -->
   <div id="tsparticles" aria-hidden="true"></div>
 
   <!-- Hero -->
@@ -26,7 +23,10 @@
     <div class="hero-content">
       <img src="public/taylor.png" alt="Taylor Ball" class="hero-pic" />
       <div class="hero-text">
-        <h1><span class="name">Taylor Ball</span>: <span class="role">Growth Marketing Specialist & Developer</span></h1>
+        <h1>
+          <span class="name">Taylor Ball</span>:
+          <span class="role">Growth Marketing Specialist & Developer</span>
+        </h1>
         <p>Self-taught, real-world solutions</p>
       </div>
     </div>
@@ -35,10 +35,10 @@
   <!-- Bio -->
   <section class="bio marketing-bio" data-aos="fade-up">
     <p>
-      Hi, I’m Taylor—a brewpub GM turned self-taught dev and brand storyteller.  
-      I build real-world tools like the Task-Console and craft compelling social media  
-      presences that boost engagement and capture leads. When I’m not coding or  
-      curating content, you’ll find me biking trails or tinkering under the hood.
+      Hi, I’m Taylor—a brewpub GM turned self-taught dev and brand storyteller.
+      I build real-world tools like the Task Console and craft compelling social
+      media presences that boost engagement and capture leads. When I’m not coding
+      or curating content, you’ll find me biking trails or tinkering under the hood.
     </p>
   </section>
 
@@ -47,7 +47,7 @@
     <a class="github-link" href="https://github.com/R3ject" target="_blank">
       <i class="fab fa-github"></i> GitHub
     </a>
-    <a class="resume-link" href="public/TaylorBall_Resume_2025.pdf" download>
+    <a class="resume-link" href="Taylor Ball_Resume_20250620.pdf.pdf" download>
       <i class="fas fa-file-download"></i> Resume
     </a>
   </section>
@@ -120,7 +120,7 @@
             <span class="badge badge-cloudinary">Cloudinary</span>
           </div>
         </div>
-        <!-- 6. Chat Bot -->
+        <!-- 6. ETX Brewing Chat Bot -->
         <div class="project-card" data-aos="fade-up" onclick="openModal('project6')">
           <img src="public/chatbot.png" alt="ETX Brewing Chat Bot" />
           <h2>ETX Brewing Chat Bot</h2>
@@ -152,44 +152,46 @@
         <div class="marketing-cards" data-aos="fade-up">
           <div class="marketing-card">
             <a href="https://tdgraphicdesigntx.com/" target="_blank">
-              <img src="public/tdgraphic-logo.png" alt="TD Graphic Design TX">
+              <img src="public/tdgraphic-logo.png" alt="TD Graphic Design TX" />
               <h3>TD Graphic Design TX</h3>
             </a>
           </div>
           <div class="marketing-card">
             <a href="https://etxbrew.com/" target="_blank">
-              <img src="public/etxbrew-logo.png" alt="ETX Brewing Co.">
+              <img src="public/etxbrew-logo.png" alt="ETX Brewing Co." />
               <h3>ETX Brewing Co.</h3>
             </a>
           </div>
           <div class="marketing-card">
             <a href="https://www.vividwebdevelopment.com/" target="_blank">
-              <img src="public/vividweb-logo.png" alt="Vivid Web Dev">
+              <img src="public/vividweb-logo.png" alt="Vivid Web Development" />
               <h3>Vivid Web Development</h3>
             </a>
           </div>
           <div class="marketing-card">
             <a href="https://tiltedtripodphotos.com/" target="_blank">
-              <img src="public/tiltedtripod-logo.png" alt="Tilted Tripod Photos">
+              <img src="public/tiltedtripod-logo.png" alt="Tilted Tripod Photos" />
               <h3>Tilted Tripod Photos</h3>
             </a>
           </div>
           <div class="marketing-card">
             <a href="https://4thegirlsandco.com/" target="_blank">
-              <img src="public/4thegirls-logo.png" alt="4 The Girls & Co.">
-              <h3>4 The Girls & Co.</h3>
+              <img src="public/4thegirls-logo.png" alt="4 The Girls & Co." />
+              <h3>4 The Girls &amp; Co.</h3>
             </a>
           </div>
         </div>
         <div class="social-cards" data-aos="fade-up">
           <div class="marketing-card">
             <a href="https://facebook.com/YourBreweryPage" target="_blank">
-              <i class="fab fa-facebook-f"></i><h3>Facebook</h3>
+              <i class="fab fa-facebook-f"></i>
+              <h3>Facebook</h3>
             </a>
           </div>
           <div class="marketing-card">
             <a href="https://instagram.com/YourBreweryPage" target="_blank">
-              <i class="fab fa-instagram"></i><h3>Instagram</h3>
+              <i class="fab fa-instagram"></i>
+              <h3>Instagram</h3>
             </a>
           </div>
         </div>
@@ -198,8 +200,30 @@
 
   </div><!-- /.content-wrapper -->
 
-  <!-- Scripts & AOS init -->
-  <script> AOS.init({ offset:0, duration:600, easing:'ease-in-out', once:false }); </script>
+  <!-- Project Detail Modal -->
+  <div id="projectModal" class="modal" role="dialog" aria-modal="true" style="display:none;">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- How-To Modal -->
+  <div id="howToModal" class="modal" role="dialog" aria-modal="true" style="display:none;">
+    <div class="modal-content">
+      <button class="close" onclick="closeHowToModal()" aria-label="Close">&times;</button>
+      <div id="howToBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="scripts.js"></script>
+  <script>
+    AOS.init({ offset:0, duration:600, easing:'ease-in-out', once:false });
+    window.addEventListener('load', () => AOS.refreshHard());
+  </script>
 </body>
 </html>
