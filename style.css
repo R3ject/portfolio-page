@@ -12,23 +12,21 @@
    GLOBAL
 ============================================================================= */
 :root {
-  --primary: #ff6600; /* Orange for accents */
-  --earth-green: #2e7d32; /* Forest green */
-  --earth-brown: #4a3728; /* Rugged brown */
-  --earth-gray: #616161; /* Slate gray */
-  --background: #f5f5f5; /* Light earthy gray */
+  --primary: #ff6600;
+  --earth-green: #2e7d32;
+  --earth-brown: #4a3728;
+  --earth-gray: #616161;
+  --background: #f5f5f5;
   --text-dark: #181717;
 }
 
 html, body {
   height: 100%;
   margin: 0;
-  background: #1a1a1a; /* Explicit black for tsParticles */
+  background: #1a1a1a; /* Fallback background without tsParticles */
   font-family: 'Montserrat', sans-serif;
   color: var(--text-dark);
 }
-
-/* Removed body { background-color: transparent } to avoid conflicts */
 
 /* =============================================================================
    HERO
@@ -44,11 +42,11 @@ html, body {
   background-position: center;
   color: #fff;
   text-align: center;
-  z-index: 2;
+  z-index: 10;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 .hero-content {
-  z-index: 2;
+  z-index: 11;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,7 +78,7 @@ html, body {
   color: #fff;
   text-align: center;
   padding: 1rem 2rem;
-  z-index: 2;
+  z-index: 10;
 }
 .marketing-bio {
   background: rgba(74, 55, 40, 0.8);
@@ -92,6 +90,7 @@ html, body {
   line-height: 1.6;
   font-size: 1.15rem;
   border: 1px solid var(--earth-green);
+  z-index: 10;
 }
 
 /* =============================================================================
@@ -103,7 +102,7 @@ html, body {
   gap: 1rem;
   margin: 2rem 0;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 .quick-links a {
   display: inline-flex;
@@ -143,17 +142,18 @@ html, body {
 ============================================================================= */
 .content-wrapper {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 2rem;
   background: var(--background);
   border-radius: 8px;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 @media (max-width: 768px) {
   .content-wrapper {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
     padding: 1rem;
   }
 }
@@ -165,7 +165,7 @@ html, body {
   text-align: center;
   margin: 2rem 0 1rem;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 .projects-header h2 {
   color: var(--text-dark);
@@ -178,38 +178,42 @@ html, body {
 }
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  background: rgba(245, 245, 245, 0.95);
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  background: rgba(245, 245, 245, 0.9);
+  padding: 1.5rem;
   border-radius: 6px;
   position: relative;
-  z-index: 2;
+  z-index: 10;
   border: 1px solid var(--earth-brown);
 }
 .project-card {
   background: #fff;
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 8px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid var(--earth-green);
 }
 .project-card:hover {
-  transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .project-card img {
   width: 100%;
-  max-height: 180px;
+  max-height: 120px;
   object-fit: cover;
   border-radius: 4px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   border: 1px solid var(--earth-brown);
 }
-.project-card h2,
-.project-card p {
+.project-card h2 {
+  font-size: 1.2rem;
   color: var(--text-dark);
+}
+.project-card p {
+  font-size: 0.9rem;
+  color: var(--earth-gray);
 }
 
 /* Badges */
@@ -218,110 +222,70 @@ html, body {
 }
 .badge {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  margin: 0.3rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  margin: 0.2rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
   font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid var(--earth-brown);
 }
 .badge:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
-.badge-react {
-  background: linear-gradient(135deg, #61dafb, #21a1f1);
-  color: #fff;
-}
-.badge-firebase {
-  background: linear-gradient(125deg, #ff5c5c, #e53e3e);
-  color: #fff;
-}
-.badge-mui {
-  background: linear-gradient(135deg, #66bb6a, #43a047);
-  color: #fff;
-}
-.badge-qr {
-  background: linear-gradient(135deg, #b75bae, #9843a0);
-  color: #fff;
-}
-.badge-qrgen {
-  background: linear-gradient(135deg, #5bb7a3, #43a089);
-  color: #fff;
-}
-.badge-geo {
-  background: linear-gradient(135deg, #b7b25b, #97a043);
-  color: #fff;
-}
-.badge-matter {
-  background: linear-gradient(135deg, #e9990f, #cf9a30);
-  color: #fff;
-}
-.badge-cron {
-  background: linear-gradient(135deg, #0ce868, #21a1f1);
-  color: #fff;
-}
-.badge-emailjs {
-  background: linear-gradient(125deg, #c6ff5c, #e53e3e);
-  color: #fff;
-}
-.badge-leaflet {
-  background: linear-gradient(135deg, #057a0b, #94f00a);
-  color: #fff;
-}
-.badge-cloudinary {
-  background: linear-gradient(135deg, #acacac, #8b78ce);
-  color: #fff;
-}
-.badge-node {
-  background: linear-gradient(135deg, #ebab09, #ee0ad0);
-  color: #fff;
-}
-.badge-google {
-  background: linear-gradient(135deg, #02f6a8, #97a043);
-  color: #fff;
-}
+.badge-react { background: linear-gradient(135deg, #61dafb, #21a1f1); color: #fff; }
+.badge-firebase { background: linear-gradient(125deg, #ff5c5c, #e53e3e); color: #fff; }
+.badge-mui { background: linear-gradient(135deg, #66bb6a, #43a047); color: #fff; }
+.badge-qr { background: linear-gradient(135deg, #b75bae, #9843a0); color: #fff; }
+.badge-qrgen { background: linear-gradient(135deg, #5bb7a3, #43a089); color: #fff; }
+.badge-geo { background: linear-gradient(135deg, #b7b25b, #97a043); color: #fff; }
+.badge-matter { background: linear-gradient(135deg, #e9990f, #cf9a30); color: #fff; }
+.badge-cron { background: linear-gradient(135deg, #0ce868, #21a1f1); color: #fff; }
+.badge-emailjs { background: linear-gradient(125deg, #c6ff5c, #e53e3e); color: #fff; }
+.badge-leaflet { background: linear-gradient(135deg, #057a0b, #94f00a); color: #fff; }
+.badge-cloudinary { background: linear-gradient(135deg, #acacac, #8b78ce); color: #fff; }
+.badge-node { background: linear-gradient(135deg, #ebab09, #ee0ad0); color: #fff; }
+.badge-google { background: linear-gradient(135deg, #02f6a8, #97a043); color: #fff; }
 
 /* =============================================================================
    MARKETING
 ============================================================================= */
-.marketing-column {
-}
 .marketing h2 {
   color: var(--text-dark);
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   position: relative;
-  z-index: 2;
+  z-index: 10;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 .marketing-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  background: rgba(74, 55, 40, 0.8);
-  padding: 1.5rem;
+  background: rgba(74, 55, 40, 0.9);
+  padding: 2rem;
   border-radius: 6px;
   position: relative;
-  z-index: 2;
-  border: 1px solid var(--earth-green);
+  z-index: 10;
+  border: 2px solid var(--earth-green);
 }
 .marketing-card {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1.75rem;
   border-radius: 8px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
   border: 1px solid var(--earth-brown);
 }
 .marketing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8);
 }
 .marketing-card img {
   max-width: 100%;
-  max-height: 80px;
+  max-height: 100px;
   object-fit: contain;
   margin-bottom: 1rem;
 }
@@ -332,11 +296,11 @@ html, body {
 }
 .marketing-card h3 {
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 .social-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   margin-top: 1rem;
 }
@@ -346,10 +310,11 @@ html, body {
   justify-content: center;
 }
 .social-cards i {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--earth-green);
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
 }
+
 
 /* =============================================================================
    CASE STUDY: PINTWOOD DERBY
@@ -362,6 +327,7 @@ html, body {
   color: var(--text-dark);
   text-align: left;
   border: 1px solid var(--earth-brown);
+  z-index: 10;
 }
 .case-header {
   text-align: center;
@@ -458,6 +424,38 @@ html, body {
 }
 
 /* =============================================================================
+   CASE STUDY: NEW VENTURE
+============================================================================= */
+.new-venture .milestone-card {
+  background: var(--earth-brown);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--earth-green);
+  text-align: center;
+}
+.new-venture .milestone-card.completed { background: var(--earth-green); }
+.new-venture .milestone-card.in-progress { background: var(--primary); }
+.new-venture .mockup-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--earth-brown);
+  text-align: center;
+}
+.new-venture .mockup-card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+.new-venture .mockup-card p {
+  font-size: 0.9rem;
+  color: var(--earth-gray);
+}
+
+/* =============================================================================
    LINKEDIN CONNECT
 ============================================================================= */
 .linkedin-connect {
@@ -466,6 +464,7 @@ html, body {
   background: var(--earth-brown);
   color: #fff;
   border-top: 2px solid var(--earth-green);
+  z-index: 10;
 }
 .linkedin-connect h2 {
   font-size: 1.8rem;
@@ -663,172 +662,69 @@ html, body {
 }
 
 /* =============================================================================
-   tsParticles
-============================================================================= */
-#tsparticles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -10 !important; /* Ensure behind all content */
-  background: #1a1a1a;
-  display: block; /* Ensure visibility */
-  opacity: 1; /* Prevent hiding */
-  border: 1px solid red; /* Temporary debug border */
-}
-#tsparticles > canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -10 !important;
-  display: block; /* Ensure canvas renders */
-  opacity: 1;
-}
-
-/* =============================================================================
    RESPONSIVE ADJUSTMENTS
 ============================================================================= */
 @media (max-width: 600px) {
-  .hero {
-    height: 50vh;
-  }
-  .hero-text h1 {
-    font-size: 1.8rem;
-  }
-  .hero-text .role {
-    font-size: 1rem;
-  }
-  .hero-pic {
-    width: 120px;
-    height: 120px;
-  }
-  .bio {
-    padding: 1rem;
-  }
-  .marketing-bio {
-    padding: 1.5rem;
-    font-size: 1rem;
-  }
-  .quick-links {
-    flex-direction: column;
-    align-items: center;
-  }
-  .quick-links a {
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-  }
-  .projects-header h2 {
-    font-size: 1.8rem;
-  }
-  .projects-header p {
-    font-size: 1rem;
-  }
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 1rem;
-  }
-  .project-card img {
-    max-height: 150px;
-  }
-  .marketing h2 {
-    font-size: 1.8rem;
-  }
-  .marketing-cards {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    padding: 1rem;
-  }
-  .marketing-card img {
-    max-height: 60px;
-  }
-  .case-study {
-    padding: 2rem 1rem;
-    margin: 2rem 0;
-  }
-  .case-header h2 {
-    font-size: 1.8rem;
-  }
-  .case-header .subtitle {
-    font-size: 1rem;
-  }
-  .case-content p {
-    font-size: 1rem;
-  }
-  .case-study-card img {
-    max-height: 100px;
-  }
-  .linkedin-connect h2 {
-    font-size: 1.5rem;
-  }
-  .linkedin-qr {
-    max-width: 120px;
-  }
-  .modal-content {
-    padding: 1rem;
-    width: 95%;
-    max-height: 85vh;
-  }
-  .modal-content h2 {
-    font-size: 1.5rem;
-  }
-  .modal-img {
-    max-height: 150px;
-  }
-  .how-to-img {
-    max-width: 250px;
-    max-height: 120px;
-  }
-  .modal-tabs {
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  .tab-button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
+  .hero { height: 50vh; }
+  .hero-text h1 { font-size: 1.8rem; }
+  .hero-text .role { font-size: 1rem; }
+  .hero-pic { width: 120px; height: 120px; }
+  .bio { padding: 1rem; }
+  .marketing-bio { padding: 1.5rem; font-size: 1rem; }
+  .quick-links { flex-direction: column; align-items: center; }
+  .quick-links a { width: 100%; max-width: 250px; text-align: center; }
+  .projects-header h2 { font-size: 1.8rem; }
+  .projects-header p { font-size: 1rem; }
+  .gallery { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); padding: 1rem; }
+  .project-card img { max-height: 100px; }
+  .project-card h2 { font-size: 1.1rem; }
+  .project-card p { font-size: 0.85rem; }
+  .marketing h2 { font-size: 1.8rem; }
+  .marketing-cards { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); padding: 1rem; }
+  .marketing-card img { max-height: 80px; }
+  .marketing-card h3 { font-size: 1.1rem; }
+  .social-cards { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+  .social-cards i { font-size: 2.5rem; }
+  .case-study { padding: 2rem 1rem; margin: 2rem 0; }
+  .case-header h2 { font-size: 1.8rem; }
+  .case-header .subtitle { font-size: 1rem; }
+  .case-content p { font-size: 1rem; }
+  .case-study-card img { max-height: 100px; }
+  .linkedin-connect h2 { font-size: 1.5rem; }
+  .linkedin-qr { max-width: 120px; }
+  .modal-content { padding: 1rem; width: 95%; max-height: 85vh; }
+  .modal-content h2 { font-size: 1.5rem; }
+  .modal-img { max-height: 150px; }
+  .how-to-img { max-width: 250px; max-height: 120px; }
+  .modal-tabs { flex-direction: column; gap: 0.3rem; }
+  .tab-button { padding: 0.4rem 0.8rem; font-size: 0.9rem; }
   .tab-content p,
   .tab-content ul,
-  #howToModal .modal-content ol {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  .tab-content h3 {
-    font-size: 1.1rem;
-  }
-  .modal-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+  #howToModal .modal-content ol { font-size: 0.9rem; line-height: 1.5; }
+  .tab-content h3 { font-size: 1.1rem; }
+  .modal-buttons { flex-direction: column; align-items: center; }
   .how-to-btn,
   .project-btn,
-  .demo-btn {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.4rem 1rem;
-    font-size: 0.9rem;
-  }
+  .demo-btn { width: 100%; max-width: 200px; padding: 0.4rem 1rem; font-size: 0.9rem; }
 }
 @media (max-width: 400px) {
-  .modal-content {
-    padding: 0.8rem;
-    width: 98%;
-  }
-  .modal-img {
-    max-height: 120px;
-  }
-  .how-to-img {
-    max-width: 200px;
-    max-height: 100px;
-  }
-  .modal-content h2 {
-    font-size: 1.3rem;
-  }
+  .modal-content { padding: 0.8rem; width: 98%; }
+  .modal-img { max-height: 120px; }
+  .how-to-img { max-width: 200px; max-height: 100px; }
+  .modal-content h2 { font-size: 1.3rem; }
   .tab-content p,
   .tab-content ul,
-  #howToModal .modal-content ol {
-    font-size: 0.85rem;
-  }
+  #howToModal .modal-content ol { font-size: 0.85rem; }
 }
+@media (max-width: 600px) {
+  .new-venture .milestone-card h4 { font-size: 1.1rem; }
+  .new-venture .milestone-card p { font-size: 0.85rem; }
+  .new-venture .mockup-card img { max-height: 120px; }
+  .new-venture .mockup-card p { font-size: 0.8rem; }
+}
+@media (max-width: 400px) {
+  .new-venture .milestone-card h4 { font-size: 1rem; }
+  .new-venture .mockup-card img { max-height: 100px; }
+}
+
+

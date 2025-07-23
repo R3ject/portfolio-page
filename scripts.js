@@ -1,38 +1,10 @@
-// tsParticles initialization (adjusted opacity for earthy blend)
-tsParticles.load({
-  id: "tsparticles",
-  options: {
-    background: { color: { value: "#000000" } },
-    fpsLimit: 60,
-    particles: {
-      number: { value: 100, density: { enable: true, value_area: 800 } },
-      color: { value: "#ff0000" },
-      shape: { type: "circle" },
-      size: { value: { min: 5, max: 10 }, random: true },
-      opacity: { value: 1, random: { enable: false } },
-      move: { enable: true, speed: { min: 2, max: 5 }, direction: "none", random: true, outModes: "out" }
-    },
-    interactivity: { events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" }, resize: { enable: true } }, modes: { repulse: { distance: 100, duration: 0.4 }, push: { quantity: 4 } } },
-    detectRetina: true
-  }
-});
-
-// Animate GitHub Link on Load and Hover
-window.addEventListener('load', () => {
-  const gh = document.querySelector('.github-link');
-  if (!gh) return;
-  gsap.fromTo(gh, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1, ease: 'back.out(1.7)' });
-  gh.addEventListener('mouseenter', () => gsap.to(gh, { scale: 1.1, duration: 0.3 }));
-  gh.addEventListener('mouseleave', () => gsap.to(gh, { scale: 1, duration: 0.3 }));
-});
-
-// Project Details with original app-specific images
+// Project Details (moved to top to avoid initialization errors)
 const projectDetails = {
   project1: {
     title: "Digital Punch Card",
     description: `
       <h3>Overview:</h3>
-      <p>Developed an interactive digital punch card application for a restaurant loyalty program. The app allows customers to scan a QR code at the venue to register their purchase and track their progress toward rewards. It also includes an onboarding tour to guide new users.</p>
+      <p>Developed an interactive digital punch card application for a restaurant loyalty program...</p>
       <h3>Tech Stack:</h3>
       <ul>
         <li><strong>Frontend:</strong> React, React Router, React-QR-Scanner, React Toastify</li>
@@ -55,13 +27,13 @@ const projectDetails = {
       </ul>
       <p>This project demonstrates a full-stack approach to developing an engaging, real-time loyalty application.</p>
     `,
-    image: "public/digital-punch.jpeg", // Original screenshot
+    image: "public/digital-punch.jpeg",
     link: "https://digitalpunchcard-4f53d.web.app/",
     howTo: `
       <h3>How to Use Digital Punch Card</h3>
       <ol>
         <li>Create a new login.</li>
-        <li>When you are ready to scan the QR code provided below, click on the "Enable Demo Mode" button in the bottom left corner to bypass geolocation verification.<br><img src="public/demo-button.png" alt="Demo button location" class="how-to-img"><br><img src="public/punch-card-qr.jpg" alt="Demo QR Code" class="how-to-img"></li>
+        <li>When you are ready to scan the QR code provided below, click on the "Enable Demo Mode" button in the bottom left corner to bypass geolocation verification.<br><img src="public/punch-card-qr.jpg" alt="Demo QR Code" class="how-to-img"></li>
         <li>Next, click the "Scan QR Code" button in the top right.</li>
         <li>Scan the QR code and watch as your card is punched!</li>
       </ol>
@@ -71,7 +43,7 @@ const projectDetails = {
     title: "QR BINGO",
     description: `
       <h3>Overview:</h3>
-      <p>Developed an interactive digital Bingo game application for a brewery’s loyalty program. Customers complete tasks to earn rewards and mark progress by scanning QR codes.</p>
+      <p>Developed an interactive digital Bingo game application for a brewery’s loyalty program...</p>
       <h3>Tech Stack:</h3>
       <ul>
         <li><strong>Frontend:</strong> React, React Router, Firebase Authentication, Firebase Firestore</li>
@@ -94,7 +66,7 @@ const projectDetails = {
       </ul>
       <p>This project demonstrates a full-stack approach to building an interactive, real-time loyalty application.</p>
     `,
-    image: "public/etx-bingo.png", // Original screenshot
+    image: "public/etx-bingo.png",
     link: "https://www.vividwebdevelopment.com/etx-bingo/",
     howTo: `
       <h3>How to Use QR BINGO</h3>
@@ -110,7 +82,7 @@ const projectDetails = {
     title: "TableTracker",
     description: `
       <h3>Overview:</h3>
-      <p>Developed a real-time, role-based table management application for a brewpub. TableTracker allows staff and customers to interact with table status using geolocation verification, predictive wait times, and an intuitive reservation queue.</p>
+      <p>Developed a real-time, role-based table management application for a brewpub...</p>
       <h3>Tech Stack:</h3>
       <ul>
         <li><strong>Frontend:</strong> React, Material UI, React Router, React Toastify, Chart.js</li>
@@ -133,7 +105,7 @@ const projectDetails = {
       </ul>
       <p>This project demonstrates a full-stack approach to building a scalable, real-time management system.</p>
     `,
-    image: "public/tabletracker.png", // Original screenshot
+    image: "public/tabletracker.png",
     link: "https://table-tracker-3ace2.web.app",
     howTo: `
       <h3>How to Use TableTracker</h3>
@@ -148,7 +120,7 @@ const projectDetails = {
     title: "Keg Stack Challenge",
     description: `
       <h3>Overview:</h3>
-      <p>Created an engaging physics-based game where players stack kegs using device tilt (mobile) or arrow keys (desktop). Keg Stack Challenge tests precision and balance, with a dynamic gravity system and real-time collision detection.</p>
+      <p>Created an engaging physics-based game where players stack kegs...</p>
       <h3>Tech Stack:</h3>
       <ul>
         <li><strong>Frontend:</strong> React, Matter.js</li>
@@ -157,29 +129,29 @@ const projectDetails = {
       </ul>
       <h3>Challenges:</h3>
       <ul>
-        <li><strong>Physics Integration:</strong> Fine-tuning Matter.js for smooth keg stacking and gravity escalation.</li>
-        <li><strong>Device-Specific Controls:</strong> Implementing tilt for mobile and arrow keys for desktop without overlap.</li>
-        <li><strong>Viewport Management:</strong> Adjusting desktop height for more stacking room while preserving mobile layout.</li>
-        <li><strong>State Sync:</strong> Fixing game over persistence and duplicate UI elements.</li>
+        <li><strong>Physics Integration:</strong> Fine-tuning Matter.js for smooth keg stacking...</li>
+        <li><strong>Device-Specific Controls:</strong> Implementing tilt for mobile...</li>
+        <li><strong>Viewport Management:</strong> Adjusting desktop height...</li>
+        <li><strong>State Sync:</strong> Fixing game over persistence...</li>
       </ul>
       <h3>Accomplishments:</h3>
       <ul>
-        <li><strong>Cross-Platform Play:</strong> Built a seamless experience—tilt on mobile, keys on desktop.</li>
-        <li><strong>Dynamic Physics:</strong> Gravity increases with each keg, ramping up difficulty.</li>
-        <li><strong>Responsive Design:</strong> Tailored viewport—tall for desktop stacks, compact for mobile.</li>
-        <li><strong>Proof of Concept:</strong> Delivered a playable, portfolio-ready game with minimal polish.</li>
+        <li><strong>Cross-Platform Play:</strong> Built a seamless experience...</li>
+        <li><strong>Dynamic Physics:</strong> Gravity increases with each keg...</li>
+        <li><strong>Responsive Design:</strong> Tailored viewport...</li>
+        <li><strong>Proof of Concept:</strong> Delivered a playable...</li>
       </ul>
-      <p>This project highlights physics-based gameplay, responsive design, and creative control schemes in a fun package.</p>
+      <p>This project highlights physics-based gameplay...</p>
     `,
-    image: "public/keg-image.jpeg", // Original screenshot
+    image: "public/keg-image.jpeg",
     link: "https://r3ject.github.io/keg-stack-challenge/",
     howTo: `
       <h3>How to Play Keg Stack Challenge</h3>
       <ol>
-        <li><strong>Desktop:</strong> Click "Add Keg" to drop a keg, then use <strong>Left/Right Arrow Keys</strong> to position it before it lands.</li>
-        <li><strong>Mobile:</strong> Tap "Add Keg" to drop a keg, then press "Enable Tilt" and tilt your device left/right to guide it.</li>
-        <li>Stack kegs on the base—don’t let them fall off, or it's game over!</li>
-        <li>Hit "Reset" to start over and try for a higher score.</li>
+        <li><strong>Desktop:</strong> Click "Add Keg"...</li>
+        <li><strong>Mobile:</strong> Tap "Add Keg"...</li>
+        <li>Stack kegs on the base...</li>
+        <li>Hit "Reset" to start over...</li>
       </ol>
     `
   },
@@ -187,78 +159,78 @@ const projectDetails = {
     title: "Trail Pin",
     description: `
       <h3>Overview:</h3>
-      <p>Trail Pin is a mountain biking memory map app that allows riders to drop pins on an interactive map for every trail they've ridden. Users can attach photos and add notes, creating a digital scrapbook of their rides.</p>
+      <p>Trail Pin is a mountain biking memory map app...</p>
       <h3>Tech Stack:</h3>
       <ul>
         <li><strong>Frontend:</strong> React, Leaflet.js</li>
-        <li><strong>Backend & Data:</strong> Firebase (Authentication, Firestore), Cloudinary for image uploads</li>
+        <li><strong>Backend & Data:</strong> Firebase (Authentication, Firestore), Cloudinary...</li>
         <li><strong>Other Tools:</strong> HTML5 File API, CSS for responsive design</li>
       </ul>
       <h3>Challenges:</h3>
       <ul>
-        <li><strong>Map Interactivity:</strong> Creating an intuitive, responsive map interface that allows users to easily drop and view pins.</li>
-        <li><strong>Offline Support:</strong> Implementing offline-first features to let users browse and add pins without constant connectivity.</li>
-        <li><strong>Image Handling:</strong> Efficiently uploading and displaying images using Cloudinary.</li>
+        <li><strong>Map Interactivity:</strong> Creating an intuitive...</li>
+        <li><strong>Offline Support:</strong> Implementing offline-first...</li>
+        <li><strong>Image Handling:</strong> Efficiently uploading...</li>
       </ul>
       <h3>Accomplishments:</h3>
       <ul>
-        <li><strong>Intuitive UI:</strong> A clean, visual-first interface that focuses on user experience over heavy data metrics.</li>
-        <li><strong>Responsive Design:</strong> A fully responsive layout that adapts seamlessly between mobile and desktop views.</li>
-        <li><strong>Performance:</strong> Code splitting, caching, and offline support that enhance load times and user engagement.</li>
+        <li><strong>Intuitive UI:</strong> A clean, visual-first...</li>
+        <li><strong>Responsive Design:</strong> A fully responsive...</li>
+        <li><strong>Performance:</strong> Code splitting, caching...</li>
       </ul>
-      <p>This project demonstrates the creative use of modern web technologies to deliver a unique, user-friendly experience for mountain bikers.</p>
+      <p>This project demonstrates the creative use...</p>
     `,
-    image: "public/trailpin.png", // Original screenshot
+    image: "public/trailpin.png",
     link: "https://trailpin-fbdc7.web.app/",
     howTo: `
       <h3>How to Use Trail Pin</h3>
       <ol>
-        <li><strong>Add a Pin:</strong> Click or tap on the map to drop a pin, then enter the trail name, date, and a brief note.</li>
-        <li><strong>Upload Photos:</strong> Attach one to three photos to visually capture your ride.</li>
-        <li><strong>View Timeline:</strong> Browse your rides chronologically in the timeline sidebar.</li>
-        <li><strong>Filter Rides:</strong> Use the filter options to search by trail name or date range.</li>
+        <li><strong>Add a Pin:</strong> Click or tap on the map...</li>
+        <li><strong>Upload Photos:</strong> Attach one to three photos...</li>
+        <li><strong>View Timeline:</strong> Browse your rides...</li>
+        <li><strong>Filter Rides:</strong> Use the filter options...</li>
       </ol>
     `
   },
   project6: {
-    title: "ETX Brewing Co. Chatbot – Support & Lead Capture",
+    title: "ETX Brewing Co. Chatbot",
     description: `
       <h3>Overview:</h3>
-      <p>A fully functional, branded chatbot built for ETX Brewing Co. It answers FAQs, captures lead information, and notifies staff — all without paying for a third-party platform.</p>
+      <p>A fully functional, branded chatbot built for ETX Brewing Co...</p>
       <h3>Features:</h3>
       <ul>
-        <li><strong>Conversational Interface:</strong> A React-powered chat UI that mimics natural conversation.</li>
-        <li><strong>Prewritten Smart Responses:</strong> Detects keywords (e.g., "hours", "menu", "booking") and returns customized replies.</li>
-        <li><strong>Lead Form Integration:</strong> Triggered by keywords such as “catering” or “quote”, letting users submit contact details.</li>
-        <li><strong>Form Validation:</strong> Real-time checks for valid name, email, phone, and message with immediate feedback.</li>
-        <li><strong>Auto-Close & Confirmation:</strong> Displays a thank you message and auto-closes after submission.</li>
-        <li><strong>Clear Chat & Scroll Logic:</strong> A "Clear Chat" button with smooth auto-scrolling to keep up with new messages.</li>
-        <li><strong>Spam Protection & Rate Limiting:</strong> Express middleware ensures the API is protected from abuse.</li>
-        <li><strong>Email Notifications & Logging:</strong> Sends email notifications for new leads and logs submissions to Google Sheets.</li>
-        <li><strong>Embeddable:</strong> Deployed to Netlify so that it can be embedded on any website via a simple script tag.</li>
+        <li><strong>Conversational Interface:</strong> A React-powered chat UI...</li>
+        <li><strong>Prewritten Smart Responses:</strong> Detects keywords...</li>
+        <li><strong>Lead Form Integration:</strong> Triggered by keywords...</li>
+        <li><strong>Form Validation:</strong> Real-time checks...</li>
+        <li><strong>Auto-Close & Confirmation:</strong> Displays a thank you...</li>
+        <li><strong>Clear Chat & Scroll Logic:</strong> A "Clear Chat" button...</li>
+        <li><strong>Spam Protection & Rate Limiting:</strong> Express middleware...</li>
+        <li><strong>Email Notifications & Logging:</strong> Sends email notifications...</li>
+        <li><strong>Embeddable:</strong> Deployed to Netlify...</li>
       </ul>
       <h3>Tech Stack:</h3>
       <p><strong>Frontend:</strong> React (Vite), HTML/CSS, JavaScript<br><strong>Backend:</strong> Node.js + Express, REST API<br><strong>Integrations:</strong> Google Apps Script, Gmail SMTP (nodemailer), Google Sheets<br><strong>Deployment:</strong> Netlify (Frontend), Render (API hosting)</p>
       <h3>Why It Matters:</h3>
-      <p>This chatbot reduces repetitive questions for staff, modernizes the brand’s image, and captures valuable leads without the cost of a monthly service.</p>
+      <p>This chatbot reduces repetitive questions...</p>
     `,
-    image: "public/chatbot.png", // Original screenshot
+    image: "public/chatbot.png",
     link: "https://etxbrew.com/",
     howTo: `
       <h3>How to Use the Chatbot</h3>
       <ol>
         <li>Visit the ETX Brewing Co. website.</li>
-        <li>Click on the chatbot icon located at the bottom corner of the page.</li>
-        <li>Type in your query (e.g. "What are your hours?") to see the smart responses.</li>
-        <li>If you’re interested in catering or need a quote, follow the prompt to fill out your contact details.</li>
-      </ul>
+        <li>Click on the chatbot icon...</li>
+        <li>Type in your query...</li>
+        <li>If you’re interested in catering...</li>
+      </ol>
     `
   },
   project7: {
     title: "Task Console",
     description: `
       <h3>Overview:</h3>
-      <p>Task Console is a web app designed for shift-based teams—specifically kitchen operations. It allows managers to create reusable task templates, assign tasks by shift and date, track completions in real time, and receive daily email summaries.</p>
+      <p>Task Console is a web app designed for shift-based teams...</p>
       <h3>Tech Stack:</h3>
       <ul>
         <li><strong>Frontend:</strong> React, Tailwind CSS</li>
@@ -267,53 +239,265 @@ const projectDetails = {
       </ul>
       <h3>Challenges:</h3>
       <ul>
-        <li><strong>Shift Handling:</strong> Built logic for AM/PM task separation and enforced a cutoff with alarm triggers if tasks are incomplete after grace period.</li>
-        <li><strong>Realtime Sync:</strong> Tasks update live between tablets and manager view using Firebase listeners.</li>
-        <li><strong>Email Logic:</strong> Integrated daily and weekly reporting with Puppeteer-triggered cron jobs and inline CSV delivery.</li>
+        <li><strong>Shift Handling:</strong> Built logic for AM/PM task separation...</li>
+        <li><strong>Realtime Sync:</strong> Tasks update live...</li>
+        <li><strong>Email Logic:</strong> Integrated daily and weekly reporting...</li>
       </ul>
       <h3>Accomplishments:</h3>
       <ul>
-        <li><strong>Template System:</strong> Managers can create, edit, rename, duplicate, and assign reusable task templates per shift/day.</li>
-        <li><strong>One-Off Tasks:</strong> Supports fast entry of individual tasks for one-day use.</li>
-        <li><strong>Mobile-First:</strong> Fully optimized for kitchen tablet use with large tap targets and responsive layout.</li>
+        <li><strong>Template System:</strong> Managers can create...</li>
+        <li><strong>One-Off Tasks:</strong> Supports fast entry...</li>
+        <li><strong>Mobile-First:</strong> Fully optimized for kitchen tablet use...</li>
       </ul>
-      <p>This project brings clarity, accountability, and automation to a chaotic kitchen environment using clean, efficient tools.</p>
+      <p>This project brings clarity, accountability...</p>
     `,
-    image: "public/taskconsole.png", // Original screenshot
+    image: "public/taskconsole.png",
     link: "https://task-console.netlify.app/",
     howTo: `
       <h3>How to Use Task Console</h3>
       <ol>
-        <li><strong>View Tasks:</strong> Staff access a shift-based task list. They can tap tasks to mark them as complete and select who completed them.</li>
-        <li><strong>Send Notes:</strong> Staff can send a quick note to management with their name and message using the "Send Note" button.</li>
-        <li><strong>Manager Access:</strong> Login with a password to view live task status, download weekly CSV reports, and manage templates.</li>
-        <li><strong>Create Templates:</strong> Add reusable templates with editable task lists, then assign them to any date/shift.</li>
-        <li><strong>One-Off Tasks:</strong> Add and assign one-day tasks without saving them to a template.</li>
-      </ul>
+        <li><strong>View Tasks:</strong> Staff access a shift-based task list...</li>
+        <li><strong>Send Notes:</strong> Staff can send a quick note...</li>
+        <li><strong>Manager Access:</strong> Login with a password...</li>
+        <li><strong>Create Templates:</strong> Add reusable templates...</li>
+        <li><strong>One-Off Tasks:</strong> Add and assign one-day tasks...</li>
+      </ol>
     `
   },
   derby: {
     title: "1st Annual Pintwood Derby Case Study",
-    image: "public/pintwoodderbyheader.jpg", // Confirmed original image
+    image: "public/pintwoodderbyheader.jpg",
     description: `
       <h3>What Is a Pintwood Derby?</h3>
-      <p>Get ready to rev your engines and raise a glass—ETX Brewing Co. hosted its first annual Pintwood Derby sponsored by StoneWater Roofing. It’s a one‑of‑a‑kind event where speed meets sips in downtown Tyler, blending pinewood derby nostalgia with craft‑brewery vibes on July 19, 2025.</p>
+      <p>Get ready to rev your engines...</p>
       <h3>Campaign Strategy</h3>
       <ul>
-        <li>3‑month planning: press releases, promo graphics, custom event page</li>
-        <li>Channels: Facebook, Instagram, Google, email, print, local TV</li>
-        <li>Budget: $139.90 total (ads + print & TV spots)</li>
+        <li>3‑month planning: press releases...</li>
+        <li>Channels: Facebook, Instagram...</li>
+        <li>Budget: $139.90 total...</li>
       </ul>
       <h3>Next Steps & Sponsors</h3>
-      <p>New sponsors are already lining up—planning for 2026 is underway! Big thanks to StoneWater Roofing for their support.</p>
+      <p>New sponsors are already lining up...</p>
     `,
     link: "https://etxbrew.com/pintwood-derby"
+  },
+  newVenture: {
+    title: "New Venture",
+    description: `
+      <h3>Overview:</h3>
+      <p>End-to-end app development and marketing, showcasing project management and strategic planning.</p>
+      <h3>Tech Stack:</h3>
+      <ul>
+        <li><strong>Frontend:</strong> React</li>
+        <li><strong>Tools:</strong> Chart.js for visualizations</li>
+      </ul>
+      <h3>Challenges:</h3>
+      <ul>
+        <li><strong>Timeline Management:</strong> Balancing development and marketing milestones.</li>
+        <li><strong>Data Visualization:</strong> Creating clear, interactive progress charts.</li>
+      </ul>
+      <h3>Accomplishments:</h3>
+      <ul>
+        <li><strong>Dynamic Roadmap:</strong> Built an interactive dashboard to track progress.</li>
+        <li><strong>Strategic Planning:</strong> Integrated mockups and projections for marketing.</li>
+      </ul>
+    `,
+    image: "public/new-venture-placeholder.jpg"
   }
 };
+
+// tsParticles initialization with enhanced debugging
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM fully loaded, initializing tsParticles...');
+  const tsparticlesDiv = document.getElementById('tsparticles');
+  if (!tsparticlesDiv) {
+    console.error('Error: #tsparticles div not found in DOM');
+    return;
+  }
+
+  tsParticles.load({
+    id: "tsparticles",
+    options: {
+      background: { color: { value: "#1a1a1a" } },
+      fpsLimit: 60,
+      particles: {
+        number: { value: 20 },
+        color: { value: ["#2e7d32", "#4a3728", "#ff6600"] }, // Earthy theme colors
+        shape: { type: "circle" },
+        size: { value: { min: 2, max: 5 }, random: true },
+        opacity: { value: 0.5, random: true, anim: { enable: false } },
+        move: {
+          enable: true,
+          speed: { min: 0.5, max: 2 },
+          direction: "none",
+          outModes: "out",
+          random: true,
+          straight: false
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "bubble" },
+          onClick: { enable: true, mode: "push" },
+          resize: { enable: true }
+        },
+        modes: {
+          bubble: { distance: 200, size: 8, duration: 2, opacity: 0.8 },
+          push: { quantity: 2 }
+        }
+      },
+      detectRetina: true,
+      fullScreen: { enable: true, zIndex: -10 }
+    }
+  }).then(container => {
+    if (!container) {
+      console.error('tsParticles container not initialized');
+      return;
+    }
+    console.log('tsParticles initialized:', container);
+    const canvas = document.querySelector('#tsparticles canvas');
+    if (canvas) {
+      canvas.style.zIndex = '-10';
+      canvas.style.opacity = '0.5';
+      console.log('Canvas found:', canvas, 'Dimensions:', canvas.width, canvas.height);
+      console.log('Canvas styles:', window.getComputedStyle(canvas));
+      // Verify particle rendering
+      setTimeout(() => {
+        if (container && container.particles) {
+          console.log('Checking particles after 2s:', container.particles.count, 'particles active');
+        } else {
+          console.error('Particle container or particles not available');
+        }
+      }, 2000);
+    } else {
+      console.error('Canvas not found in #tsparticles');
+    }
+  }).catch(error => {
+    console.error('tsParticles load failed:', error);
+  });
+
+  // Log any runtime errors
+  window.addEventListener('error', e => {
+    console.error('Runtime error:', e.message, 'at', e.filename, e.lineno);
+  });
+});
+
+// Animate GitHub Link on Load and Hover
+window.addEventListener('load', () => {
+  const gh = document.querySelector('.github-link');
+  if (!gh) {
+    console.error('GitHub link not found');
+    return;
+  }
+  gsap.fromTo(gh, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1, ease: 'back.out(1.7)' });
+  gh.addEventListener('mouseenter', () => gsap.to(gh, { scale: 1.1, duration: 0.3 }));
+  gh.addEventListener('mouseleave', () => gsap.to(gh, { scale: 1, duration: 0.3 }));
+});
+
+// Roadmap data (JSON only)
+const roadmap = [
+  { id: 'phase1', name: 'Phase 1', status: 'in-progress', startDate: '2025-06-01', endDate: '2025-06-30', notes: 'Initial planning and ideation' },
+  { id: 'phase2', name: 'Phase 2', status: 'in-progress', startDate: '2025-06-18', endDate: '2025-09-15', notes: 'Core feature development' },
+  { id: 'phase3', name: 'Phase 3', status: 'pending', startDate: '2025-09-16', endDate: '2025-12-01', notes: 'Marketing campaign setup' }
+];
+
+// Projections data
+const projections = [
+  { month: 'Week 1', users: 50 },
+  { month: 'Month 1', users: 200 },
+  { month: 'Month 3', users: 1000 }
+];
+
+// Initialize roadmap and projections
+window.addEventListener('load', () => {
+  // Roadmap chart
+  const roadmapCtx = document.getElementById('roadmap-chart')?.getContext('2d');
+  if (roadmapCtx) {
+    new Chart(roadmapCtx, {
+      type: 'bar',
+      data: {
+        labels: roadmap.map(m => m.name),
+        datasets: [{
+          label: 'Project Progress',
+          data: roadmap.map(m => m.status === 'completed' ? 100 : m.status === 'in-progress' ? 60 : 0),
+          backgroundColor: roadmap.map(m => m.status === 'completed' ? '#2e7d32' : m.status === 'in-progress' ? '#ff6600' : '#616161'),
+          borderColor: '#4a3728',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        scales: { x: { display: false }, y: { title: { display: true, text: 'Milestones' } } },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.x}%` } } }
+      }
+    });
+  }
+
+  // Projections chart
+  const projectionsCtx = document.getElementById('projections-chart')?.getContext('2d');
+  if (projectionsCtx) {
+    new Chart(projectionsCtx, {
+      type: 'line',
+      data: {
+        labels: projections.map(p => p.month),
+        datasets: [{
+          label: 'Projected Users',
+          data: projections.map(p => p.users),
+          borderColor: '#ff6600',
+          backgroundColor: 'rgba(255, 102, 0, 0.2)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true, title: { display: true, text: 'Users' } },
+          x: { title: { display: true, text: 'Time' } }
+        },
+        plugins: { legend: { display: false } }
+      }
+    });
+  }
+
+  // Update milestone cards
+  roadmap.forEach(milestone => {
+    const card = document.getElementById(`milestone-${milestone.id}`);
+    if (card) {
+      card.classList.remove('completed', 'in-progress');
+      if (milestone.status === 'completed') card.classList.add('completed');
+      if (milestone.status === 'in-progress') card.classList.add('in-progress');
+    }
+  });
+});
+
+// Show milestone details
+function showDetails() {
+  const modal = document.getElementById('projectModal');
+  const body = document.getElementById('modal-body');
+  body.innerHTML = `
+    <h2>New Venture Milestones</h2>
+    <ul>
+      ${roadmap.map(m => `
+        <li>
+          <h3>${m.name}</h3>
+          <p>Status: ${m.status}</p>
+          <p>Dates: ${m.startDate} to ${m.endDate}</p>
+          <p>Notes: ${m.notes}</p>
+        </li>
+      `).join('')}
+    </ul>
+  `;
+  modal.style.display = 'flex';
+  gsap.fromTo('.modal-content', { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'power2.out' });
+}
 
 // Global Functions for Modals
 function openModal(id) {
   const p = projectDetails[id];
+  if (!p) {
+    console.error('Project not found:', id);
+    return;
+  }
   const body = document.getElementById('modal-body');
 
   let html = `
@@ -322,7 +506,6 @@ function openModal(id) {
   `;
 
   if (id === 'derby') {
-    // Derby: Single-tab with chart
     html += `
       <div class="tab-content active">${p.description}</div>
       <h3>Key Metrics</h3>
@@ -332,7 +515,6 @@ function openModal(id) {
       </div>
     `;
   } else {
-    // Other projects: Tabbed interface
     html += `
       <div class="modal-tabs">
         <button class="tab-button active" data-tab="overview">Overview</button>
@@ -355,12 +537,10 @@ function openModal(id) {
 
   body.innerHTML = html;
 
-  // Show modal with animation
   const modal = document.getElementById('projectModal');
   modal.style.display = 'flex';
   gsap.fromTo('.modal-content', { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'power2.out' });
 
-  // Initialize tabs for non-Derby projects
   if (id !== 'derby') {
     initTabSwitching();
   } else {
@@ -376,9 +556,9 @@ window.onclick = e => {
   if (e.target.id === 'projectModal') closeModal();
 };
 
-// Derby Chart Helper (log scale, sold-out removed)
 function initDerbyChart() {
-  const ctx = document.getElementById('derbyMetricsChart').getContext('2d');
+  const ctx = document.getElementById('derbyMetricsChart')?.getContext('2d');
+  if (!ctx) return;
   if (Chart.getChart(ctx)) Chart.getChart(ctx).destroy();
   new Chart(ctx, {
     type: 'bar',
@@ -410,14 +590,12 @@ function initDerbyChart() {
   });
 }
 
-// Helper function to extract a section from the project description
 function extractSection(htmlString, header) {
   const regex = new RegExp(`<h3>\\s*${header}\\s*:?\\s*</h3>(.*?)(?=(?:<h3>|</div>|$))`, 'is');
   const match = htmlString.match(regex);
   return match ? match[1].trim() : `No ${header} section available.`;
 }
 
-// Initialize Tab Switching in the Project Modal
 function initTabSwitching() {
   const buttons = document.querySelectorAll('.tab-button');
   buttons.forEach(btn => {
@@ -435,7 +613,6 @@ function initTabSwitching() {
   });
 }
 
-// Open How-To Modal
 function openHowToModal(projectId) {
   const project = projectDetails[projectId];
   const howToBody = document.getElementById('howToBody');
@@ -448,7 +625,6 @@ function openHowToModal(projectId) {
   gsap.fromTo('#howToModal .modal-content', { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' });
 }
 
-// Close How-To Modal
 function closeHowToModal() {
   document.getElementById('howToModal').style.display = 'none';
 }
@@ -463,7 +639,7 @@ window.addEventListener('load', () => {
   AOS.refreshHard();
   document.querySelectorAll('.case-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const projectId = btn.getAttribute('data-project-id');
+      const projectId = btn.getAttribute('data-project-id') || 'newVenture';
       openModal(projectId);
     });
   });
