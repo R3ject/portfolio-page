@@ -1,4 +1,4 @@
-// tsParticles initialization (top for reliability)
+// tsParticles initialization (adjusted opacity for earthy blend)
 tsParticles.load({
   id: "tsparticles",
   options: {
@@ -9,19 +9,12 @@ tsParticles.load({
       color: { value: "#ff0000" },
       shape: { type: "circle" },
       size: { value: { min: 5, max: 10 }, random: true },
-      opacity: { value: 1, random: { enable: true, minimumValue: 0.5 } },
+      opacity: { value: 1, random: { enable: false } },
       move: { enable: true, speed: { min: 2, max: 5 }, direction: "none", random: true, outModes: "out" }
     },
-    interactivity: {
-      events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" }, resize: { enable: true } },
-      modes: { repulse: { distance: 100, duration: 0.4 }, push: { quantity: 4 } }
-    },
+    interactivity: { events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" }, resize: { enable: true } }, modes: { repulse: { distance: 100, duration: 0.4 }, push: { quantity: 4 } } },
     detectRetina: true
   }
-}).then(container => {
-  console.log("tsParticles loaded successfully:", container);
-}).catch(error => {
-  console.error("tsParticles failed to load:", error);
 });
 
 // Animate GitHub Link on Load and Hover
@@ -33,7 +26,7 @@ window.addEventListener('load', () => {
   gh.addEventListener('mouseleave', () => gsap.to(gh, { scale: 1, duration: 0.3 }));
 });
 
-// Project Details
+// Project Details with original app-specific images
 const projectDetails = {
   project1: {
     title: "Digital Punch Card",
@@ -62,7 +55,7 @@ const projectDetails = {
       </ul>
       <p>This project demonstrates a full-stack approach to developing an engaging, real-time loyalty application.</p>
     `,
-    image: "public/digital-punch.jpeg",
+    image: "public/digital-punch.jpeg", // Original screenshot
     link: "https://digitalpunchcard-4f53d.web.app/",
     howTo: `
       <h3>How to Use Digital Punch Card</h3>
@@ -101,7 +94,7 @@ const projectDetails = {
       </ul>
       <p>This project demonstrates a full-stack approach to building an interactive, real-time loyalty application.</p>
     `,
-    image: "public/etx-bingo.png",
+    image: "public/etx-bingo.png", // Original screenshot
     link: "https://www.vividwebdevelopment.com/etx-bingo/",
     howTo: `
       <h3>How to Use QR BINGO</h3>
@@ -140,7 +133,7 @@ const projectDetails = {
       </ul>
       <p>This project demonstrates a full-stack approach to building a scalable, real-time management system.</p>
     `,
-    image: "public/tabletracker.png",
+    image: "public/tabletracker.png", // Original screenshot
     link: "https://table-tracker-3ace2.web.app",
     howTo: `
       <h3>How to Use TableTracker</h3>
@@ -178,7 +171,7 @@ const projectDetails = {
       </ul>
       <p>This project highlights physics-based gameplay, responsive design, and creative control schemes in a fun package.</p>
     `,
-    image: "public/keg-image.jpeg",
+    image: "public/keg-image.jpeg", // Original screenshot
     link: "https://r3ject.github.io/keg-stack-challenge/",
     howTo: `
       <h3>How to Play Keg Stack Challenge</h3>
@@ -215,7 +208,7 @@ const projectDetails = {
       </ul>
       <p>This project demonstrates the creative use of modern web technologies to deliver a unique, user-friendly experience for mountain bikers.</p>
     `,
-    image: "public/trailpin.png",
+    image: "public/trailpin.png", // Original screenshot
     link: "https://trailpin-fbdc7.web.app/",
     howTo: `
       <h3>How to Use Trail Pin</h3>
@@ -249,7 +242,7 @@ const projectDetails = {
       <h3>Why It Matters:</h3>
       <p>This chatbot reduces repetitive questions for staff, modernizes the brand’s image, and captures valuable leads without the cost of a monthly service.</p>
     `,
-    image: "public/chatbotetx.png",
+    image: "public/chatbot.png", // Original screenshot
     link: "https://etxbrew.com/",
     howTo: `
       <h3>How to Use the Chatbot</h3>
@@ -258,7 +251,7 @@ const projectDetails = {
         <li>Click on the chatbot icon located at the bottom corner of the page.</li>
         <li>Type in your query (e.g. "What are your hours?") to see the smart responses.</li>
         <li>If you’re interested in catering or need a quote, follow the prompt to fill out your contact details.</li>
-      </ol>
+      </ul>
     `
   },
   project7: {
@@ -286,7 +279,7 @@ const projectDetails = {
       </ul>
       <p>This project brings clarity, accountability, and automation to a chaotic kitchen environment using clean, efficient tools.</p>
     `,
-    image: "public/taskconsole.png",
+    image: "public/taskconsole.png", // Original screenshot
     link: "https://task-console.netlify.app/",
     howTo: `
       <h3>How to Use Task Console</h3>
@@ -301,7 +294,7 @@ const projectDetails = {
   },
   derby: {
     title: "1st Annual Pintwood Derby Case Study",
-    image: "public/pintwoodderbyheader.jpg",
+    image: "public/pintwoodderbyheader.jpg", // Confirmed original image
     description: `
       <h3>What Is a Pintwood Derby?</h3>
       <p>Get ready to rev your engines and raise a glass—ETX Brewing Co. hosted its first annual Pintwood Derby sponsored by StoneWater Roofing. It’s a one‑of‑a‑kind event where speed meets sips in downtown Tyler, blending pinewood derby nostalgia with craft‑brewery vibes on July 19, 2025.</p>
@@ -314,7 +307,7 @@ const projectDetails = {
       <h3>Next Steps & Sponsors</h3>
       <p>New sponsors are already lining up—planning for 2026 is underway! Big thanks to StoneWater Roofing for their support.</p>
     `,
-    link: "https://etxbrew.com/pintwood-derby" // Added live event page link
+    link: "https://etxbrew.com/pintwood-derby"
   }
 };
 
