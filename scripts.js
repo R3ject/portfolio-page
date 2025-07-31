@@ -643,4 +643,38 @@ window.addEventListener('load', () => {
       openModal(projectId);
     });
   });
-});
+  // ==== GA4 Event Tracking ====  
+;(function() {
+  // Resume downloads
+  const resumeLink = document.querySelector('.resume-link');
+  if (resumeLink) {
+    resumeLink.addEventListener('click', () => {
+      gtag('event', 'download_resume', {
+        event_category: 'engagement',
+        event_label: 'Resume Download'
+      });
+    });
+  }
+
+  // GitHub clicks
+  const ghLink = document.querySelector('.github-link');
+  if (ghLink) {
+    ghLink.addEventListener('click', () => {
+      gtag('event', 'click_github', {
+        event_category: 'engagement',
+        event_label: 'GitHub Profile'
+      });
+    });
+  }
+
+  // LinkedIn link clicks
+  const liLink = document.querySelector('.linkedin-btn');
+  if (liLink) {
+    liLink.addEventListener('click', () => {
+      gtag('event', 'click_linkedin', {
+        event_category: 'engagement',
+        event_label: 'LinkedIn Connect'
+      });
+    });
+  }
+})();
