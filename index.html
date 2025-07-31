@@ -24,7 +24,7 @@
       <img src="public/taylor.png" alt="Taylor Ball" class="hero-pic" />
       <div class="hero-text">
         <h1><span class="name">Taylor Ball</span>: <span class="role">Growth Marketing Specialist & Developer</span></h1>
-        <p>Self‑taught, real‑world solutions</p>
+        <p>Self-taught, real-world solutions</p>
       </div>
     </div>
   </header>
@@ -32,8 +32,8 @@
   <!-- Bio -->
   <section class="bio marketing-bio" data-aos="fade-up">
     <p>
-      Hi, I’m Taylor—a brewpub GM turned self‑taught dev and brand storyteller.
-      I build real‑world tools like the Task Console and craft compelling social
+      Hi, I’m Taylor—a brewpub GM turned self-taught dev and brand storyteller.
+      I build real-world tools like the Task Console and craft compelling social
       media presences that boost engagement and capture leads. When I’m not coding
       or curating content, you’ll find me biking trails or tinkering under the hood.
     </p>
@@ -48,6 +48,8 @@
       <i class="fas fa-file-download"></i> Resume
     </a>
   </section>
+
+  <!-- LinkedIn -->
   <section class="linkedin-connect" data-aos="fade-up">
     <h2>Connect with Me</h2>
     <p>Discover my latest marketing insights and projects on LinkedIn.</p>
@@ -144,17 +146,33 @@
             <span class="badge badge-matter">Matter.js</span>
           </div>
         </div>
-        <!-- New venture project card -->
-        <div class="project-card" data-aos="fade-up" onclick="openModal('newVenture')">
-          <img src="public/new-venture-placeholder.jpg" alt="New Venture Roadmap">
-          <h2>New Venture</h2>
-          <p>End-to-end app development and marketing</p>
-          <div class="badges">
-            <span class="badge badge-react">React</span>
-            <span class="badge badge-firebase">Firebase</span>
-          </div>
-        </div>
       </div>
+
+      <!-- LIVE HOSTING & EVENT ENGAGEMENT -->
+      <section class="live-hosting" data-aos="fade-up">
+        <div class="live-header">
+          <h2>Live Event Hosting & Brand Representation</h2>
+          <p>
+            As MC for ETX Brewing Co. taproom events, seasonal festivals, and
+            community gatherings, I energize the crowd, drive participation, and
+            reinforce the brand voice live.
+          </p>
+        </div>
+        <div class="collage">
+          <figure class="photo">
+            <img src="public/mc-on-stage.jpg" alt="Taylor MCing on stage">
+            <figcaption>“You make the events so fun!” — Attendee Feedback</figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="public/mc-crowd-interaction.jpg" alt="Taylor engaging the crowd">
+            <figcaption>Engagement boost: 30% more crowd participation</figcaption>
+          </figure>
+          <figure class="photo">
+            <img src="public/mc-announcement.jpeg" alt="Taylor making announcements">
+            <figcaption>Real-time promos & social-share prompts</figcaption>
+          </figure>
+        </div>
+      </section>
     </section>
 
     <!-- Marketing Column -->
@@ -194,18 +212,7 @@
           </a>
         </div>
       </div>
-      <div class="social-cards" data-aos="fade-up">
-        <div class="marketing-card">
-          <a href="https://facebook.com/etxbrew" target="_blank">
-            <i class="fab fa-facebook-f"></i><h3>Facebook</h3>
-          </a>
-        </div>
-        <div class="marketing-card">
-          <a href="https://instagram.com/etxbrew" target="_blank">
-            <i class="fab fa-instagram"></i><h3>Instagram</h3>
-          </a>
-        </div>
-      </div>
+
       <!-- Case Study: Pintwood Derby -->
       <section class="case-study" data-aos="fade-up">
         <div class="case-header">
@@ -215,78 +222,34 @@
         <div class="case-content">
           <p>
             This month, I led marketing & operations for our inaugural Pintwood Derby
-            at ETX Brewing Co. With just 3 months to plan a multi‑channel campaign
+            at ETX Brewing Co. With just 3 months to plan a multi-channel campaign
             (Facebook, Instagram, Google, email, print, TV), we sold all 36 racer slots
             in 3 weeks and drew a huge crowd on race day.
           </p>
           <p>
             I wrote press releases, designed all graphics, built a custom event page, and
-            coordinated paid ads. The result was a sold‑out event, in‑person buzz, and new
+            coordinated paid ads. The result was a sold-out event, in-person buzz, and new
             sponsors already lining up.
           </p>
           <a class="case-btn" data-project-id="derby">Read Full Breakdown</a>
         </div>
       </section>
-      <!-- New venture case study -->
-      <section class="case-study new-venture">
-        <div class="case-header">
-          <h2>New Venture Roadmap</h2>
-          <p class="subtitle">Tracking my app development and marketing journey</p>
-        </div>
-        <div class="case-content">
-          <p>Follow the progress of my latest project, showcasing end-to-end development, marketing, and project management.</p>
-          <canvas id="roadmap-chart" style="max-height: 200px; margin: 1.5rem 0;"></canvas>
-          <div class="milestone-cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <div class="milestone-card" id="milestone-phase1">
-              <h4 class="text-lg font-semibold">Phase 1</h4>
-              <p>Status: <span>Completed</span></p>
-              <p>June 1 - June 15, 2025</p>
-            </div>
-            <div class="milestone-card in-progress" id="milestone-phase2">
-              <h4 class="text-lg font-semibold">Phase 2</h4>
-              <p>Status: <span>In Progress</span></p>
-              <p>July 1 - August 15, 2025</p>
-            </div>
-            <div class="milestone-card" id="milestone-phase3">
-              <h4 class="text-lg font-semibold">Phase 3</h4>
-              <p>Status: <span>Pending</span></p>
-              <p>August 16 - September 1, 2025</p>
-            </div>
-          </div>
-          <div class="mockup-gallery grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-            <div class="mockup-card">
-              <img src="public/mockup-ad1.png" alt="Social Media Ad 1">
-              <p>Instagram Ad: 1080x1080, Projected Reach: 10,000</p>
-            </div>
-            <div class="mockup-card">
-              <img src="public/mockup-ad2.jpg" alt="Social Media Ad 2">
-              <p>Facebook Ad: 1200x628, Projected Clicks: 500</p>
-            </div>
-          </div>
-          <canvas id="projections-chart" style="max-height: 200px; margin: 1.5rem 0;"></canvas>
-          <button class="case-btn" onclick="showDetails()">View Milestone Details</button>
-        </div>
-      </section>
     </section>
   </div><!-- /.content-wrapper -->
 
-  <!-- Project Detail Modal -->
+  <!-- Modals & Scripts (unchanged) -->
   <div id="projectModal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-content">
       <button class="close" onclick="closeModal()" aria-label="Close">×</button>
       <div id="modal-body"></div>
     </div>
   </div>
-
-  <!-- How-To Modal -->
   <div id="howToModal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-content">
       <button class="close" onclick="closeHowToModal()" aria-label="Close">×</button>
       <div id="howToBody"></div>
     </div>
   </div>
-
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.0/tsparticles.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
