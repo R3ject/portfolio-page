@@ -1,3 +1,6 @@
+// ==== GA4 shim (in case gtag.js hasn’t loaded yet) ====
+window.dataLayer = window.dataLayer || [];
+window.gtag    = window.gtag    || function(){ dataLayer.push(arguments); };
 // Project Details (moved to top to avoid initialization errors)
 const projectDetails = {
   project1: {
@@ -643,38 +646,39 @@ window.addEventListener('load', () => {
       openModal(projectId);
     });
   });
-  // ==== GA4 Event Tracking ====  
-;(function() {
-  // Resume downloads
-  const resumeLink = document.querySelector('.resume-link');
-  if (resumeLink) {
-    resumeLink.addEventListener('click', () => {
-      gtag('event', 'download_resume', {
-        event_category: 'engagement',
-        event_label: 'Resume Download'
+ // ==== GA4 Event Tracking ====  
+  (function() {
+    // Resume downloads
+    const resumeLink = document.querySelector('.resume-link');
+    if (resumeLink) {
+      resumeLink.addEventListener('click', () => {
+        gtag('event', 'download_resume', {
+          event_category: 'engagement',
+          event_label: 'Resume Download'
+        });
       });
-    });
-  }
+    }
 
-  // GitHub clicks
-  const ghLink = document.querySelector('.github-link');
-  if (ghLink) {
-    ghLink.addEventListener('click', () => {
-      gtag('event', 'click_github', {
-        event_category: 'engagement',
-        event_label: 'GitHub Profile'
+    // GitHub clicks
+    const ghLink = document.querySelector('.github-link');
+    if (ghLink) {
+      ghLink.addEventListener('click', () => {
+        gtag('event', 'click_github', {
+          event_category: 'engagement',
+          event_label: 'GitHub Profile'
+        });
       });
-    });
-  }
+    }
 
-  // LinkedIn link clicks
-  const liLink = document.querySelector('.linkedin-btn');
-  if (liLink) {
-    liLink.addEventListener('click', () => {
-      gtag('event', 'click_linkedin', {
-        event_category: 'engagement',
-        event_label: 'LinkedIn Connect'
+    // LinkedIn link clicks
+    const liLink = document.querySelector('.linkedin-btn');
+    if (liLink) {
+      liLink.addEventListener('click', () => {
+        gtag('event', 'click_linkedin', {
+          event_category: 'engagement',
+          event_label: 'LinkedIn Connect'
+        });
       });
-    });
-  }
-})();
+    }
+  })();
+});
